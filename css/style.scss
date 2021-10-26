@@ -1,0 +1,264 @@
+//color
+$noir : #000000;
+$blanc : #ffffff;
+$gris : #888888;
+$rouge : #ff0000;
+$black-red : #880000;
+$vert : #00ff00;
+$black-green : #008800;
+
+@font-face {
+  font-family: 'alien';
+  src: url('../font/alienware.TTF');
+}
+
+@font-face {
+  font-family: 'secret';
+  src: url('../font/TS.OTF');
+}
+
+//generale style
+body{
+  background: $noir;
+  color: $blanc;
+}
+
+.switch{
+  width: 78px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-family: 'alien';
+  font-weight: bold;
+  font-size: 15px;
+  position: fixed;
+  &::after{
+    margin-left: 6%;
+  }
+  &::before{
+    margin-left: 6%;
+  }
+  .sphere{
+    width: 20px;
+    height: 20px;
+    margin: 2%;
+  }
+}
+
+#navbar{
+  position: fixed;
+  nav{
+    a{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'secret';
+      text-transform: uppercase;
+      font-size: 20px;
+      .icon-nav{
+        // z-index: 2;
+      }
+    }
+  }
+}
+//red mode
+body.red{
+  .fill{
+    fill: $black-red;
+  }
+
+  .no-fill{
+    stroke: $black-red;
+  }
+  .switch{
+    border: 3px solid $black-red;
+    &::after{
+      content: 'Red';
+      color: $rouge;
+      text-shadow: 1px 1px 1px $black-red;
+    }
+    .sphere{
+      border: 2px solid $rouge;
+      background: $black-red;
+    }
+  }
+}
+//green mode
+body.green{
+  .fill{
+    fill: $black-green;
+  }
+
+  .no-fill{
+    stroke: $black-green;
+  }
+  .switch{
+    border: 3px solid $black-green;
+    &::before{
+      content: 'green';
+      color: $vert;
+      text-shadow: 1px 1px 1px $black-green;
+    }
+    .sphere{
+      border: 2px solid $vert;
+      background: $black-green;
+      transform: translate(30%);
+    }
+  }
+}
+
+@media  screen and (max-width:1441px){
+  .switch{
+    right: 1%;
+    top: 50%;
+  }
+  
+  #navbar{
+    top: 49%;
+    left: 5%;
+    width: 80%;
+    nav{
+      ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      a{
+        .icon-nav{
+          width: 60px;
+          margin-top: 2%;
+          padding: 10%;
+          border: 2px solid $black-red;
+          border-radius: 50px;
+          box-shadow: 3px 5px 1px $black-red;  
+        }
+      }
+      span{
+        padding: 1%;
+        border-radius: 50px;
+        color: $rouge;
+        border: 3px solid $black-red;
+        font-size: 16px;
+        background: $noir;
+        text-align: center;
+        z-index: 2;
+        box-shadow: 3px -4px 1px $black-red;
+      }
+      a{
+        .graph{
+          width: 60px;
+        }
+        .activity{
+          width: 80px;
+        }
+        .color{
+          width: 60px;
+        }
+        .icon{
+          width: 50px;
+        }
+      }
+    }
+  }
+  body.green{
+    #navbar{
+      a{
+        .icon-nav{
+          border: 2px solid $black-green;
+          box-shadow: 3px 5px 1px $black-green;  
+        }
+        span{
+          color: $vert;
+          border: 3px solid $black-green;
+          box-shadow: 3px -4px 1px $black-green;
+        }
+      }
+    }
+  }
+}
+
+@media  screen and (min-width:1441px){
+  .switch{
+    top: 1%;
+    right: 1%;
+  }
+  
+  #navbar{
+    right: 1%;
+    top: 35%;
+    width: 3%;
+    nav{
+      width: 100%;
+      padding: 2%;
+
+      a{
+        margin: 40% 0;
+        .icon-nav{
+          width: 55px;
+          padding: 5%;
+          border-radius: 50px;
+          transition: all ease .5s;
+        }
+        span{
+            width: 80px;
+            text-align: center;
+            position: fixed;
+            margin-right: 90px;
+            margin-top: 2%;
+            border-radius: 50px;
+            background: #000;
+            z-index: 0;
+            display: none;
+        }        
+        .graph,.color,.icon{
+          margin-top: 2.5%;
+        }
+      }
+    }
+  }
+
+  .fill .icon-nav:hover{
+    fill: $noir;
+  }
+
+  .no-fill .icon-nav:hover{
+    stroke: $noir;
+    fill: none;
+  }
+
+
+    #graph:hover,#activity:hover,#color:hover,#icon:hover{
+      .graph,.activity,.color,.icon{
+        display: block;
+      }
+    }
+  body.red{
+    #navbar{
+      nav{
+        border: 3px solid $black-red;
+        .icon-nav:hover{
+          background: $black-red;
+          border: 2px $black-red;
+        }  
+        span{
+          color: $black-red;
+        }
+      }
+    }
+  }
+  body.green{
+    #navbar{
+      nav{
+        border: 3px solid $black-green;
+        .icon-nav:hover{
+          background: $black-green;
+          border: 2px $black-green;
+        }  
+        span{
+          color: $black-green;
+        }
+      }
+    }
+  }
+}
