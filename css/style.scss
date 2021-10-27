@@ -1,11 +1,11 @@
 //color
-$noir : #000000;
-$blanc : #ffffff;
+$black : #000000;
+$white : #ffffff;
 $gris : #888888;
-$rouge : #ff0000;
-$black-red : #880000;
-$vert : #00ff00;
-$black-green : #008800;
+$red : #ff0000;
+$dark-red : #880000;
+$green : #00ff00;
+$dark-green : #008800;
 
 @font-face {
   font-family: 'alien';
@@ -19,18 +19,11 @@ $black-green : #008800;
 
 //generale style
 body{
-  background: $noir;
-  color: $blanc;
+  background: $black;
+  color: $white;
 }
 
 .switch{
-  width: 78px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  font-family: 'alien';
-  font-weight: bold;
-  font-size: 15px;
   position: fixed;
   &::after{
     margin-left: 6%;
@@ -57,7 +50,10 @@ body{
       text-transform: uppercase;
       font-size: 20px;
       .icon-nav{
-        // z-index: 2;
+        z-index: 2;
+      }
+      span{
+        display: none;
       }
     }
   }
@@ -65,44 +61,34 @@ body{
 //red mode
 body.red{
   .fill{
-    fill: $black-red;
+    fill: $dark-red;
   }
 
   .no-fill{
-    stroke: $black-red;
+    stroke: $dark-red;
   }
   .switch{
-    border: 3px solid $black-red;
-    &::after{
-      content: 'Red';
-      color: $rouge;
-      text-shadow: 1px 1px 1px $black-red;
-    }
+    border: 3px solid $dark-red;
     .sphere{
-      border: 2px solid $rouge;
-      background: $black-red;
+      border: 2px solid $red;
+      background: $dark-red;
     }
   }
 }
 //green mode
 body.green{
   .fill{
-    fill: $black-green;
+    fill: $dark-green;
   }
 
   .no-fill{
-    stroke: $black-green;
+    stroke: $dark-green;
   }
   .switch{
-    border: 3px solid $black-green;
-    &::before{
-      content: 'green';
-      color: $vert;
-      text-shadow: 1px 1px 1px $black-green;
-    }
+    border: 3px solid $dark-green;
     .sphere{
-      border: 2px solid $vert;
-      background: $black-green;
+      border: 2px solid $green;
+      background: $dark-green;
       transform: translate(30%);
     }
   }
@@ -112,6 +98,7 @@ body.green{
   .switch{
     right: 1%;
     top: 50%;
+    width: 50px;
   }
   
   #navbar{
@@ -126,20 +113,11 @@ body.green{
       }
       a{
         .icon-nav{
-          width: 60px;
+          width: 50px;
           margin-top: 2%;
           padding: 10%;
           border-radius: 50px;
         }
-      }
-      span{
-        padding: 1%;
-        border-radius: 50px;
-        color: $rouge;
-        font-size: 16px;
-        background: $noir;
-        text-align: center;
-        z-index: 2;
       }
       a{
         .graph{
@@ -158,32 +136,9 @@ body.green{
     }
   }
   body.green{
-    #navbar{
-      a{
-        .icon-nav{
-          border: 2px solid $black-green;
-          box-shadow: 3px 5px 1px $black-green;  
-        }
-        span{
-          color: $vert;
-          border: 3px solid $black-green;
-          box-shadow: 3px -4px 1px $black-green;
-        }
-      }
-    }
-  }
-  .body.red{
-    #navbar{
-      a{
-        .icon-nav{
-          border: 2px solid $black-red;
-          box-shadow: 3px 5px 1px $black-red;  
-        }
-        span{
-          color: $vert;
-          border: 3px solid $black-red;
-          box-shadow: 3px -4px 1px $black-red;
-        }
+    .switch{
+      .sphere{
+        transform: translate(120%);
       }
     }
   }
@@ -191,6 +146,13 @@ body.green{
 
 @media  screen and (min-width:1441px){
   .switch{
+    width: 78px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'alien';
+    font-weight: bold;
+    font-size: 15px;
     top: 1%;
     right: 1%;
   }
@@ -230,14 +192,13 @@ body.green{
   }
 
   .fill .icon-nav:hover{
-    fill: $noir;
+    fill: $black;
   }
 
   .no-fill .icon-nav:hover{
-    stroke: $noir;
+    stroke: $black;
     fill: none;
   }
-
 
     #graph:hover,#activity:hover,#color:hover,#icon:hover{
       .graph,.activity,.color,.icon{
@@ -245,29 +206,44 @@ body.green{
       }
     }
   body.red{
+    .switch{
+      &::after{
+        content: 'Red';
+        color: $red;
+        text-shadow: 1px 1px 1px $dark-red;
+      }
+    }
     #navbar{
       nav{
-        border: 3px solid $black-red;
+        border: 3px solid $dark-red;
         .icon-nav:hover{
-          background: $black-red;
-          border: 2px $black-red;
+          background: $dark-red;
+          border: 2px $dark-red;
         }  
         span{
-          color: $black-red;
+          color: $dark-red;
         }
       }
     }
   }
+
   body.green{
+    .switch{
+      &::before{
+        content: 'green';
+        color: $green;
+        text-shadow: 1px 1px 1px $dark-green;
+      }
+    }
     #navbar{
       nav{
-        border: 3px solid $black-green;
+        border: 3px solid $dark-green;
         .icon-nav:hover{
-          background: $black-green;
-          border: 2px $black-green;
+          background: $dark-green;
+          border: 2px $dark-green;
         }  
         span{
-          color: $black-green;
+          color: $dark-green;
         }
       }
     }
