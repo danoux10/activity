@@ -51,15 +51,212 @@ body {
           align-items: center;
   font-family: 'secret';
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 110%;
 }
 
-#navbar nav a .icon-nav {
+#navbar nav a .icon-nav:hover {
   z-index: 2;
 }
 
 #navbar nav a span {
   display: none;
+}
+
+.content {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 0% 1%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1%;
+  width: 93%;
+  margin-top: 1%;
+  height: 90vh;
+  border: 1px solid lime;
+}
+
+.content .view {
+  margin-left: 5%;
+  border: 1px solid white;
+  width: 46vw;
+  height: 80vh;
+}
+
+.content .form {
+  width: 46%;
+  height: 80vh;
+  border-radius: 10px;
+  border: 1px solid pink;
+}
+
+.content .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content fieldset {
+  z-index: 1;
+  background: #000;
+  border: 1px solid white;
+  width: 42vw;
+  height: 40vh;
+  border-radius: 10px;
+}
+
+.content fieldset legend {
+  font-size: 20px;
+  margin-left: 1%;
+  font-family: 'secret';
+}
+
+.content fieldset span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content fieldset span input {
+  background: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.content fieldset span select {
+  background: none;
+}
+
+.content fieldset span input::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.content fieldset span select::-ms-expand {
+  display: none;
+}
+
+.content fieldset span button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1.5%;
+  border-radius: 40px;
+}
+
+.content fieldset span button div svg {
+  width: 40px;
+  height: 34px;
+}
+
+.content fieldset .stop {
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content fieldset .stop button {
+  text-align: center;
+  border-radius: 100px;
+  width: 100px;
+  padding: .5%;
+  font-family: 'secret';
+  text-shadow: 0px 0px 2px #000000;
+}
+
+.content fieldset .stop button:hover {
+  background: none;
+}
+
+.content fieldset .table {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2%;
+}
+
+.content fieldset .table .scroll {
+  border-radius: 15px;
+}
+
+.content fieldset .table .scroll thead {
+  display: block;
+}
+
+.content fieldset .table .scroll tbody {
+  display: block;
+  height: 14vh;
+  overflow: auto;
+}
+
+.content fieldset .table .scroll tbody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content fieldset .table .scroll tbody::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.content fieldset .table .scroll tbody::-webkit-scrollbar-thumb {
+  width: 6px;
+  border-radius: 50px;
+}
+
+.content fieldset .table .scroll th, .content fieldset .table .scroll td {
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
 }
 
 body.red .fill {
@@ -76,6 +273,46 @@ body.red .switch {
 
 body.red .switch .sphere {
   border: 2px solid #ff0000;
+  background: #880000;
+}
+
+body.red input::-webkit-calendar-picker-indicator {
+  -webkit-filter: 1;
+          filter: 1;
+}
+
+body.red input, body.red select {
+  border: 2px solid #880000;
+}
+
+body.red .valid {
+  border: 2px solid #ff0000;
+  background: #880000;
+}
+
+body.red .stop button {
+  border: 1px solid #ff0000;
+  background: #880000;
+}
+
+body.red .scroll tr, body.red .scroll th, body.red .scroll td {
+  border: 1px solid #ff0000;
+}
+
+body.red .scroll tbody::-webkit-scrollbar {
+  background-color: #880000;
+}
+
+body.red .scroll tbody::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  border: 1px solid #500000;
+}
+
+body.red .scroll tbody tr {
+  background: #500000;
+}
+
+body.red .scroll tbody tr:nth-child(even) {
   background: #880000;
 }
 
@@ -96,6 +333,41 @@ body.green .switch .sphere {
   background: #008800;
   -webkit-transform: translate(30%);
           transform: translate(30%);
+}
+
+body.green input, body.green select {
+  border: 2px solid #008800;
+}
+
+body.green .valid {
+  border: 2px solid #00ff00;
+  background: #008800;
+}
+
+body.green .stop button {
+  border: 1px solid #00ff00;
+  background: #008800;
+}
+
+body.green .scroll tr, body.green .scroll th, body.green .scroll td {
+  border: 1px solid #00ff00;
+}
+
+body.green .scroll tbody::-webkit-scrollbar {
+  background-color: #008800;
+}
+
+body.green .scroll tbody::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border: 1px solid #005000;
+}
+
+body.green .scroll tbody tr {
+  background: #005000;
+}
+
+body.green .scroll tbody tr:nth-child(even) {
+  background: #008800;
 }
 
 @media screen and (max-width: 1441px) {
@@ -161,20 +433,19 @@ body.green .switch .sphere {
   }
   #navbar {
     right: 1%;
-    top: 35%;
-    width: 3%;
+    top: 30%;
+    width: 80px;
   }
   #navbar nav {
     width: 100%;
-    padding: 2%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   #navbar nav a {
     margin: 40% 0;
   }
   #navbar nav a .icon-nav {
-    width: 55px;
-    padding: 5%;
-    border-radius: 50px;
+    width: 100%;
     -webkit-transition: all ease .5s;
     transition: all ease .5s;
   }
@@ -185,19 +456,13 @@ body.green .switch .sphere {
     margin-right: 90px;
     margin-top: 2%;
     border-radius: 50px;
-    background: #000;
+    background: #000000;
     z-index: 0;
+    text-shadow: 0px 0px 2px #888888;
     display: none;
   }
   #navbar nav a .graph, #navbar nav a .color, #navbar nav a .icon {
     margin-top: 2.5%;
-  }
-  .fill .icon-nav:hover {
-    fill: #000000;
-  }
-  .no-fill .icon-nav:hover {
-    stroke: #000000;
-    fill: none;
   }
   #graph:hover .graph, #graph:hover .activity, #graph:hover .color, #graph:hover .icon, #activity:hover .graph, #activity:hover .activity, #activity:hover .color, #activity:hover .icon, #color:hover .graph, #color:hover .activity, #color:hover .color, #color:hover .icon, #icon:hover .graph, #icon:hover .activity, #icon:hover .color, #icon:hover .icon {
     display: block;
@@ -210,10 +475,6 @@ body.green .switch .sphere {
   body.red #navbar nav {
     border: 3px solid #880000;
   }
-  body.red #navbar nav .icon-nav:hover {
-    background: #880000;
-    border: 2px #880000;
-  }
   body.red #navbar nav span {
     color: #880000;
   }
@@ -224,10 +485,6 @@ body.green .switch .sphere {
   }
   body.green #navbar nav {
     border: 3px solid #008800;
-  }
-  body.green #navbar nav .icon-nav:hover {
-    background: #008800;
-    border: 2px #008800;
   }
   body.green #navbar nav span {
     color: #008800;

@@ -3,8 +3,10 @@ $black : #000000;
 $white : #ffffff;
 $gris : #888888;
 $red : #ff0000;
+$middle-red : #500000;
 $dark-red : #880000;
 $green : #00ff00;
+$middle-green: #005000;
 $dark-green : #008800;
 
 @font-face {
@@ -37,7 +39,6 @@ body{
     margin: 2%;
   }
 }
-
 #navbar{
   position: fixed;
   nav{
@@ -48,12 +49,148 @@ body{
       align-items: center;
       font-family: 'secret';
       text-transform: uppercase;
-      font-size: 20px;
-      .icon-nav{
+      font-size: 110%;
+      .icon-nav:hover{
         z-index: 2;
       }
       span{
         display: none;
+      }
+    }
+  }
+} 
+
+.content{
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 0% 1%; 
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+  align-items: center; 
+  margin-left: 1%;
+  width: 93%;
+  margin-top: 1%;
+  height: 90vh;
+  border: 1px solid lime;
+
+  .view{
+    margin-left: 5%;
+    border: 1px solid white;
+    width: 46vw;
+    height: 80vh;
+  }
+  
+  .form{
+    width: 46%;
+    height: 80vh;
+    border-radius: 10px;
+    border: 1px solid pink;
+  }
+  .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  fieldset{
+    z-index: 1;
+    background: #000;
+    border: 1px solid white;
+    width: 42vw;
+    height: 40vh;
+    border-radius: 10px;
+    legend{
+      font-size: 20px;
+      margin-left: 1%;
+      font-family: 'secret';
+    }
+    span{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      input{
+        background: none;
+        text-align: center;
+        border-radius: 5px;
+      }
+      select{
+        background:none;
+      }
+      input::-webkit-calendar-picker-indicator{
+        filter: invert(1);
+      }
+      select::-ms-expand{
+        display: none;
+      }
+      button{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        padding: 1.5%;
+        border-radius: 40px;
+        div{
+          svg{
+            width: 40px;
+            height: 34px;
+          }
+        }
+      }
+    }
+    .stop{
+      margin-top: 1%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      button{
+        text-align: center;
+        border-radius: 100px;
+        width: 100px;
+        padding: .5%;
+        font-family: 'secret';
+        text-shadow: 0px 0px 2px $black;
+      }
+      button:hover{
+        background: none;
+      }
+    }
+    .table{
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2%;
+      .scroll{
+        border-radius: 15px;
+        thead{
+          display: block;
+        }
+        tbody{
+          display: block;
+          height: 14vh;
+          overflow: auto;
+          &::-webkit-scrollbar{
+            width: 6px;
+          }
+          &::-webkit-scrollbar-corner{
+            display: none;
+          }
+          &::-webkit-scrollbar-thumb{
+            width: 6px;
+            border-radius: 50px;
+          }
+        }
+        th,td{
+          border-radius: 5px;
+          width: 100px;
+          text-align: center;
+        }
       }
     }
   }
@@ -74,13 +211,48 @@ body.red{
       background: $dark-red;
     }
   }
+  input::-webkit-calendar-picker-indicator{
+    filter:(1);
+  }
+  input, select{
+    border: 2px solid $dark-red;
+  }
+  .valid{
+    border: 2px solid $red;
+    background: $dark-red;
+  }
+  .stop{
+    button{
+      border: 1px solid $red;
+      background: $dark-red;
+    }
+  }
+  .scroll{
+    tr,th,td{
+      border: 1px solid $red;
+    }
+    tbody{
+      &::-webkit-scrollbar{
+        background-color: $dark-red;
+      }
+      &::-webkit-scrollbar-thumb{
+        background: $red;
+        border: 1px solid $middle-red;
+      }
+      tr{
+        background: $middle-red;
+      }
+      tr:nth-child(even){
+        background: $dark-red;
+      }
+    }
+  }
 }
 //green mode
 body.green{
   .fill{
     fill: $dark-green;
   }
-
   .no-fill{
     stroke: $dark-green;
   }
@@ -92,8 +264,43 @@ body.green{
       transform: translate(30%);
     }
   }
+  input, select{
+    border: 2px solid $dark-green;
+  }
+  .valid{
+    border: 2px solid $green;
+    background: $dark-green;
+  }
+  .stop{
+    button{
+      border: 1px solid $green;
+      background: $dark-green;
+    }
+  }
+  .scroll{
+    tr,th,td{
+      border: 1px solid $green;
+    }
+    tbody{
+      &::-webkit-scrollbar{
+        background-color: $dark-green;
+      }
+      &::-webkit-scrollbar-thumb{
+        background: $green;
+        border: 1px solid $middle-green;
+
+      }
+      tr{
+        background: $middle-green;
+      }
+      tr:nth-child(even){
+        background: $dark-green;
+      }
+    }
+  }
 }
 
+//mobil
 @media  screen and (max-width:1441px){
   .switch{
     right: 1%;
@@ -144,6 +351,7 @@ body.green{
   }
 }
 
+//desktop
 @media  screen and (min-width:1441px){
   .switch{
     width: 78px;
@@ -156,33 +364,31 @@ body.green{
     top: 1%;
     right: 1%;
   }
-  
   #navbar{
     right: 1%;
-    top: 35%;
-    width: 3%;
+    top: 30%;
+    width: 80px;    
     nav{
       width: 100%;
-      padding: 2%;
-
+      padding-left: 10px;
+      padding-right: 10px;
       a{
         margin: 40% 0;
         .icon-nav{
-          width: 55px;
-          padding: 5%;
-          border-radius: 50px;
+          width: 100%;
           transition: all ease .5s;
         }
         span{
-            width: 80px;
-            text-align: center;
-            position: fixed;
-            margin-right: 90px;
-            margin-top: 2%;
-            border-radius: 50px;
-            background: #000;
-            z-index: 0;
-            display: none;
+          width: 80px;
+          text-align: center;
+          position: fixed;
+          margin-right: 90px;
+          margin-top: 2%;
+          border-radius: 50px;
+          background: $black;
+          z-index: 0;
+          text-shadow: 0px 0px 2px $gris;
+          display: none;
         }        
         .graph,.color,.icon{
           margin-top: 2.5%;
@@ -190,16 +396,6 @@ body.green{
       }
     }
   }
-
-  .fill .icon-nav:hover{
-    fill: $black;
-  }
-
-  .no-fill .icon-nav:hover{
-    stroke: $black;
-    fill: none;
-  }
-
     #graph:hover,#activity:hover,#color:hover,#icon:hover{
       .graph,.activity,.color,.icon{
         display: block;
@@ -216,10 +412,6 @@ body.green{
     #navbar{
       nav{
         border: 3px solid $dark-red;
-        .icon-nav:hover{
-          background: $dark-red;
-          border: 2px $dark-red;
-        }  
         span{
           color: $dark-red;
         }
@@ -238,10 +430,6 @@ body.green{
     #navbar{
       nav{
         border: 3px solid $dark-green;
-        .icon-nav:hover{
-          background: $dark-green;
-          border: 2px $dark-green;
-        }  
         span{
           color: $dark-green;
         }
