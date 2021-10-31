@@ -13,6 +13,10 @@ body {
   color: #ffffff;
 }
 
+.visible {
+  display: block;
+}
+
 .switch {
   position: fixed;
 }
@@ -82,7 +86,36 @@ body {
   width: 93%;
   margin-top: 1%;
   height: 90vh;
-  border: 1px solid lime;
+}
+
+.content .valid {
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1.5%;
+  border-radius: 40px;
+}
+
+.content .valid span svg {
+  width: 40px;
+  height: 34px;
+  fill: #ffffff;
+}
+
+.content .valid:hover {
+  background: none;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
 }
 
 .content .view {
@@ -96,10 +129,6 @@ body {
   width: 46%;
   height: 80vh;
   border-radius: 10px;
-  border: 1px solid pink;
-}
-
-.content .form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,6 +142,52 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.content .graphFormAM {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: 2%;
+}
+
+.content .activitybt {
+  margin-top: 1%;
+}
+
+.content .btn {
+  margin-top: 1%;
+  margin-left: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .btn span {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+}
+
+.content .btn span svg {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 .content fieldset {
@@ -165,7 +240,8 @@ body {
   display: none;
 }
 
-.content fieldset span button {
+.content fieldset span .valid {
+  margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,12 +258,16 @@ body {
   border-radius: 40px;
 }
 
-.content fieldset span button div svg {
+.content fieldset span .valid span {
   width: 40px;
   height: 34px;
 }
 
-.content fieldset .stop {
+.content fieldset span .valid span svg {
+  fill: #ffffff;
+}
+
+.content .formadd .stop {
   margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,7 +279,7 @@ body {
           align-items: center;
 }
 
-.content fieldset .stop button {
+.content .formadd .stop button {
   text-align: center;
   border-radius: 100px;
   width: 100px;
@@ -208,11 +288,11 @@ body {
   text-shadow: 0px 0px 2px #000000;
 }
 
-.content fieldset .stop button:hover {
+.content .formadd .stop button:hover {
   background: none;
 }
 
-.content fieldset .table {
+.content .formadd .table {
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,37 +306,73 @@ body {
   margin-top: 2%;
 }
 
-.content fieldset .table .scroll {
+.content .formadd .table .scroll {
   border-radius: 15px;
 }
 
-.content fieldset .table .scroll thead {
+.content .formadd .table .scroll thead {
   display: block;
 }
 
-.content fieldset .table .scroll tbody {
+.content .formadd .table .scroll tbody {
   display: block;
   height: 14vh;
   overflow: auto;
 }
 
-.content fieldset .table .scroll tbody::-webkit-scrollbar {
+.content .formadd .table .scroll tbody::-webkit-scrollbar {
   width: 6px;
 }
 
-.content fieldset .table .scroll tbody::-webkit-scrollbar-corner {
+.content .formadd .table .scroll tbody::-webkit-scrollbar-corner {
   display: none;
 }
 
-.content fieldset .table .scroll tbody::-webkit-scrollbar-thumb {
+.content .formadd .table .scroll tbody::-webkit-scrollbar-thumb {
   width: 6px;
   border-radius: 50px;
 }
 
-.content fieldset .table .scroll th, .content fieldset .table .scroll td {
-  border-radius: 5px;
+.content .formadd .table .scroll th, .content .formadd .table .scroll td {
   width: 100px;
   text-align: center;
+}
+
+.content .formview .button {
+  margin-top: 4%;
+}
+
+.content .formview .choix {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2%;
+  border-radius: 50px;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.content .formview .choix span {
+  margin-right: 5%;
+  width: 20%;
+}
+
+.content .formview .choix p {
+  text-transform: uppercase;
+  font-size: 110%;
+}
+
+.content .formview .choix:hover {
+  fill: #000000;
+  color: #000000;
+  text-shadow: 0px 0px 2px #000000;
 }
 
 body.red .fill {
@@ -267,6 +383,16 @@ body.red .no-fill {
   stroke: #880000;
 }
 
+body.red .active {
+  fill: #000000;
+  background: #880000;
+}
+
+body.red .desactive {
+  fill: #880000;
+  background: none;
+}
+
 body.red .switch {
   border: 3px solid #880000;
 }
@@ -274,6 +400,10 @@ body.red .switch {
 body.red .switch .sphere {
   border: 2px solid #ff0000;
   background: #880000;
+}
+
+body.red .btn span {
+  border: 1px solid #ff0000;
 }
 
 body.red input::-webkit-calendar-picker-indicator {
@@ -316,12 +446,48 @@ body.red .scroll tbody tr:nth-child(even) {
   background: #880000;
 }
 
+body.red .choix {
+  border: 2px solid #880000;
+  fill: #880000;
+  stroke: #500000;
+  color: #880000;
+  text-shadow: 0px 0px 2px #ff0000;
+}
+
+body.red .choix:hover {
+  border: 2px solid #880000;
+  background: #880000;
+}
+
 body.green .fill {
   fill: #008800;
 }
 
 body.green .no-fill {
   stroke: #008800;
+}
+
+body.green .active {
+  fill: #000000;
+  background: #008800;
+}
+
+body.green .desactive {
+  fill: #008800;
+  background: none;
+}
+
+body.green .switch {
+  border: 3px solid #008800;
+}
+
+body.green .switch .sphere {
+  border: 2px solid #00ff00;
+  background: #008800;
+}
+
+body.green .btn span {
+  border: 1px solid #00ff00;
 }
 
 body.green .switch {
@@ -367,6 +533,19 @@ body.green .scroll tbody tr {
 }
 
 body.green .scroll tbody tr:nth-child(even) {
+  background: #008800;
+}
+
+body.green .choix {
+  border: 2px solid #008800;
+  fill: #008800;
+  stroke: #005000;
+  color: #008800;
+  text-shadow: 0px 0px 2px #00ff00;
+}
+
+body.green .choix:hover {
+  border: 2px solid #008800;
   background: #008800;
 }
 
