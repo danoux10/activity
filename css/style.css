@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'alien';
   src: url("../font/alienware.TTF");
@@ -10,33 +11,50 @@
 
 body {
   background: #000000;
+  margin: 1%;
   color: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 1% 1%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .visible {
   display: block;
 }
 
-.switch {
+#navbar {
+  position: fixed;
+  margin-left: 30%;
+}
+
+#navbar .switch {
   position: fixed;
 }
 
-.switch::after {
+#navbar .switch::after {
   margin-left: 6%;
 }
 
-.switch::before {
+#navbar .switch::before {
   margin-left: 6%;
 }
 
-.switch .sphere {
+#navbar .switch .sphere {
   width: 20px;
   height: 20px;
   margin: 2%;
-}
-
-#navbar {
-  position: fixed;
 }
 
 #navbar nav a {
@@ -67,28 +85,10 @@ body {
 }
 
 .content {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-columns: 1fr;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  gap: 0% 1%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 1%;
-  width: 93%;
-  margin-top: 1%;
-  height: 90vh;
+  margin-top: 5%;
 }
 
-.content .valid {
+.valid {
   margin-top: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,28 +104,29 @@ body {
           flex-direction: row;
   padding: 1.5%;
   border-radius: 40px;
+  width: 100px;
 }
 
-.content .valid span svg {
-  width: 40px;
-  height: 34px;
-  fill: #ffffff;
+.valid p::before {
+  content: '✓';
+  margin-right: .5vw;
+  font-weight: bold;
 }
 
-.content .valid:hover {
+.valid:hover {
   background: none;
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
 }
 
-.content .view {
+.view {
   margin-left: 5%;
   border: 1px solid white;
   width: 46vw;
   height: 80vh;
 }
 
-.content .form {
+.form {
   width: 46%;
   height: 80vh;
   border-radius: 10px;
@@ -144,7 +145,7 @@ body {
           flex-direction: column;
 }
 
-.content .graphFormAM {
+.graphFormAM {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,11 +159,11 @@ body {
   margin-left: 2%;
 }
 
-.content .activitybt {
+.activitybt {
   margin-top: 1%;
 }
 
-.content .btn {
+.btn {
   margin-top: 1%;
   margin-left: 1%;
   display: -webkit-box;
@@ -174,7 +175,7 @@ body {
           flex-direction: column;
 }
 
-.content .btn span {
+.btn span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -184,13 +185,13 @@ body {
   border-radius: 50px;
 }
 
-.content .btn span svg {
+.btn span svg {
   padding: 5px;
   width: 40px;
   height: 40px;
 }
 
-.content fieldset {
+fieldset {
   z-index: 1;
   background: #000;
   border: 1px solid white;
@@ -199,13 +200,13 @@ body {
   border-radius: 10px;
 }
 
-.content fieldset legend {
+fieldset legend {
   font-size: 20px;
   margin-left: 1%;
   font-family: 'secret';
 }
 
-.content fieldset span {
+fieldset span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,26 +222,26 @@ body {
           align-items: center;
 }
 
-.content fieldset span input {
+fieldset span input {
   background: none;
   text-align: center;
   border-radius: 5px;
 }
 
-.content fieldset span select {
+fieldset span select {
   background: none;
 }
 
-.content fieldset span input::-webkit-calendar-picker-indicator {
+fieldset span input::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(1);
           filter: invert(1);
 }
 
-.content fieldset span select::-ms-expand {
+fieldset span select::-ms-expand {
   display: none;
 }
 
-.content fieldset span .valid {
+fieldset span .valid {
   margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -258,16 +259,16 @@ body {
   border-radius: 40px;
 }
 
-.content fieldset span .valid span {
+fieldset span .valid span {
   width: 40px;
   height: 34px;
 }
 
-.content fieldset span .valid span svg {
+fieldset span .valid span svg {
   fill: #ffffff;
 }
 
-.content .formadd .stop {
+.formadd .stop {
   margin-top: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,7 +280,7 @@ body {
           align-items: center;
 }
 
-.content .formadd .stop button {
+.formadd .stop button {
   text-align: center;
   border-radius: 100px;
   width: 100px;
@@ -288,11 +289,72 @@ body {
   text-shadow: 0px 0px 2px #000000;
 }
 
-.content .formadd .stop button:hover {
+.formadd .stop button:hover {
   background: none;
 }
 
-.content .formadd .table {
+.formadd .info {
+  margin-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.formadd .info .button {
+  margin-left: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formadd .info .button .modifier {
+  margin-top: 10px;
+}
+
+.formadd .info .button button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 45px;
+  height: 45px;
+}
+
+.formadd .info .button button span svg {
+  width: 25px;
+  height: 25px;
+}
+
+.formadd .table {
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -303,46 +365,45 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 2%;
 }
 
-.content .formadd .table .scroll {
+.formadd .table .scroll {
   border-radius: 15px;
 }
 
-.content .formadd .table .scroll thead {
+.formadd .table .scroll thead {
   display: block;
 }
 
-.content .formadd .table .scroll tbody {
+.formadd .table .scroll tbody {
   display: block;
   height: 14vh;
   overflow: auto;
 }
 
-.content .formadd .table .scroll tbody::-webkit-scrollbar {
+.formadd .table .scroll tbody::-webkit-scrollbar {
   width: 6px;
 }
 
-.content .formadd .table .scroll tbody::-webkit-scrollbar-corner {
+.formadd .table .scroll tbody::-webkit-scrollbar-corner {
   display: none;
 }
 
-.content .formadd .table .scroll tbody::-webkit-scrollbar-thumb {
+.formadd .table .scroll tbody::-webkit-scrollbar-thumb {
   width: 6px;
   border-radius: 50px;
 }
 
-.content .formadd .table .scroll th, .content .formadd .table .scroll td {
+.formadd .table .scroll th, .formadd .table .scroll td {
   width: 100px;
   text-align: center;
 }
 
-.content .formview .button {
+.formview .button {
   margin-top: 4%;
 }
 
-.content .formview .choix {
+.formview .choix {
   width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,17 +420,17 @@ body {
   transition: all ease .5s;
 }
 
-.content .formview .choix span {
+.formview .choix span {
   margin-right: 5%;
   width: 20%;
 }
 
-.content .formview .choix p {
+.formview .choix p {
   text-transform: uppercase;
   font-size: 110%;
 }
 
-.content .formview .choix:hover {
+.formview .choix:hover {
   fill: #000000;
   color: #000000;
   text-shadow: 0px 0px 2px #000000;
@@ -402,6 +463,15 @@ body.red .switch .sphere {
   background: #880000;
 }
 
+body.red .form fieldset {
+  border: 1px solid #880000;
+}
+
+body.red .form fieldset legend {
+  color: #880000;
+  text-shadow: 0px 0px 1px #ff0000;
+}
+
 body.red .btn span {
   border: 1px solid #ff0000;
 }
@@ -423,6 +493,17 @@ body.red .valid {
 body.red .stop button {
   border: 1px solid #ff0000;
   background: #880000;
+}
+
+body.red .info button {
+  fill: #880000;
+  border: 1px solid #880000;
+}
+
+body.red .info button:hover {
+  fill: #000000;
+  background: #880000;
+  border: 1px solid #ff0000;
 }
 
 body.red .scroll tr, body.red .scroll th, body.red .scroll td {
