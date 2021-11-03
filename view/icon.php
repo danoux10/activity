@@ -25,6 +25,10 @@
 
 	if(isset($supprim)){
 		$choose = $_POST['icon'];
-		$delete = $bdd->prepare('delete * from icon where idIcon=$choose');
-		$delete->execute();
+		echo $choose;
+		$delete = $bdd->query('select * from icon where idGraph='.$choose.'');
+		foreach ($delete as $data){
+			$info = $data['info'];
+			echo '<br>'.$info;
+		}
 	}

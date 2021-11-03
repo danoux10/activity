@@ -194,6 +194,10 @@ body{
       }
     }
   }
+.form-content{
+  display: flex;
+  flex-direction: row-reverse;
+}
 
   .formadd{
     .stop{

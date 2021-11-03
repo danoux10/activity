@@ -11,15 +11,17 @@
 </head>
 <body>
 <form action="" method="post" enctype="multipart/form-data">
-    <fieldset>
-        <legend>Add icon</legend>
-        <input type="file" name="iconAdd" accept=".svg" id="" required>
-        <button type="submit" name="add" class="border">ajouter</button>
-        <button type="submit" name="delete" class="border">delete</button>
-    </fieldset>
-</form>
-<form class="content grid grid-cols-12 gap-1">
-    <?php include '../include/afficheIcon.php'?>
+    <div class="form-content">
+        <fieldset>
+            <legend>Add icon</legend>
+            <input type="file" name="iconAdd" accept=".svg" id="">
+            <button type="submit" name="add" class="border">ajouter</button>
+            <button type="submit" name="delete" class="border">delete</button>
+        </fieldset>
+        <div>
+            <?php include '../include/afficheIcon.php'?>
+        </div>
+    </div>
 </form>
 
 </body>

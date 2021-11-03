@@ -1,51 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>color</title>
-  <link rel="stylesheet" href="../css/tailwind.css">
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/tailwind.css">
 </head>
-<body>
-  <div class="content view">
-    <div class="grid grid-cols-5 gap-1 iconView">
+<?php
 
-    </div>
-  </div>
-  <div class="content">
-    <div class="fom">
-      <form action="" method="post">
+
+@ $checkBack = $_POST['checkBack'];
+@ $checkFill = $_POST['checkFill'];
+@ $checkBorder = $_POST['checkBorder'];
+@ $checkShadow = $_POST['checkShadow'];
+@ $checkColor = $_POST['checkColor'];
+@ $reset = $_POST['reset'];
+
+if (!empty($_POST['back'])) {
+	$back = $_POST['back'];
+	if (!isset($checkBack)) {
+		$back = 'none';
+	}
+}
+
+if (!empty($_POST['fill'])) {
+	$fill = $_POST['fill'];
+	if (!isset($checkFill)) {
+		$fill = 'none';
+	}
+}
+
+if (!empty($_POST['border'])) {
+	$border = "3px solid" . $_POST['border'];
+	$borderInput = $_POST['border'];
+	if (!isset($checkBorder)) {
+		$border = 'none';
+	}
+}
+
+if (isset($_POST['shadow'])) {
+	$shadow = "0px 0px 28px 9px" . $_POST['shadow'];
+	$glow = $_POST['shadow'];
+	if (!isset($checkShadow))
+		$shadow = 'none';
+}
+
+if(isset($_POST['text'])){
+	$color = $_POST['text'];
+}
+
+if (isset($reset)){
+	$back='#000000';
+	$fill='#000000';
+	$borderInput='#000000';
+	$glow='#000000';
+	$color='#000000';
+}
+?>
+<body class="bg-black text-red-600">
+<form action="" method="post" class="grid grid-cols-2 gap-5">
+    <div class="border">
         <fieldset>
-          <legend>New Color</legend>
-          <!-- btn bg & active -->
-          <div class="flex justify-center">
-            <span class="horizontal">
-              <label for="background">Background</label>
-              <input type="color" name="background" id="background">
-            </span>
-
-            <label for="checkBg" class="check" for="checkBg">
-              <input type="checkbox" checked name="checkBg" class="checkbox" id="checkBg">
-              <div class="checkmark"></div>
-              <span class="checked"><p>Active</p></span>
-              <span class="uncheck"><p>Descative</p></span>
-            </label>
-          </div>
-          <!-- btn bloc color -->
-          <span class="horizontal">
-            <label for="fill">Bloc background</label>
-            <input type="color" name="fill" id="fill">
-          </span>
-          <!-- bnt border -->
-          <span class="horizontal">
-            <label for="bordure">Border Color</label>
-            <input type="color" name="bordure" id="bordure">
-          </span>
+            <legend>color</legend>
+            <input type="color" value="<?php echo $back;?>" name="back" id="">
+            <input type="color" value="<?php echo $fill;?>" name="fill" id="">
+            <input type="color" value="<?php echo $borderInput;?>" name="border" id="">
+            <input type="color" value="<?php echo  $glow;?>" name="shadow" id="">
+            <input type="color" value="<?php echo $color;?>" name="text" id="">
+            <input type="checkbox" name="checkBack" checked id="">
+            <input type="checkbox" name="checkFill" checked id="">
+            <input type="checkbox" name="checkBorder" checked id="">
+            <input type="checkbox" name="checkShadow" checked id="">
+            <button type="submit" name="preview">preview</button>
+            <button type="submit" name="add">add</button>
+            <button type="submit" name="reset">reset</button>
         </fieldset>
-      </form>
     </div>
-  </div>
+</form>
 </body>
 </html>
