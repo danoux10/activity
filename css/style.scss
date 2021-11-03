@@ -36,11 +36,11 @@ body{
 
 .visible{
   display: block;
-}
+} 
 
 #navbar{
   position: fixed;
-  margin-left: 30%;
+  right: 5%;
   .switch{
     position: fixed;
     &::after{
@@ -85,6 +85,7 @@ body{
     flex-direction: row;
     padding: 1.5%;
     border-radius: 40px;
+    background: $white;
     width: 100px;
     p{
      &::before{
@@ -94,10 +95,12 @@ body{
      } 
     }
   }
-  
-  .valid:hover{
-    background: none;
-    transition: all ease .5s;
+
+  .form-bnt{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
   }
   .view{
     margin-left: 5%;
@@ -165,6 +168,7 @@ body{
       }
       select{
         background:none;
+        width: 120px;
       }
       input::-webkit-calendar-picker-indicator{
         filter: invert(1);
@@ -300,6 +304,51 @@ body{
     }
   }
 // }
+//color style
+.horizontal{
+  flex-direction: row;
+  font-family: cursive;
+}
+
+input[type=color]{
+  border : 1px solid;
+  width: 40px;
+  height: 40px;
+}
+
+.check{
+  display: flex;
+  align-items: center;
+  .checkmark{
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+  }
+  p{
+    font-size: 10px;
+    margin-left: 5px;
+  }
+  .uncheck{
+    display: block;
+  }
+  .checked{
+    display: none;
+  }
+  .checkbox:checked~{
+    .checkmark{
+      &::after{
+        content:'✓';
+        .uncheck{
+          display: block;
+        }
+        .check{
+          display: none;
+        }
+      }
+      }
+    }
+  }
+
 //red mode
 body.red{
   .fill{
@@ -347,6 +396,9 @@ body.red{
   .valid{
     border: 2px solid $red;
     background: $dark-red;
+    &:hover{
+      background: none;
+    }
   }
   .stop{
     button{
@@ -424,6 +476,7 @@ body.green{
   }
   .btn{
     span{
+      fill: $dark-green;
       border : 1px solid $green;
     }
   }
@@ -482,59 +535,6 @@ body.green{
   }
 }
 
-//mobil
-@media  screen and (max-width:1441px){
-  .switch{
-    right: 1%;
-    top: 50%;
-    width: 50px;
-  }
-  
-  #navbar{
-    top: 49%;
-    left: 5%;
-    width: 80%;
-    nav{
-      ul{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-      a{
-        .icon-nav{
-          width: 50px;
-          margin-top: 2%;
-          padding: 10%;
-          border-radius: 50px;
-        }
-      }
-      a{
-        .graph{
-          width: 60px;
-        }
-        .activity{
-          width: 80px;
-        }
-        .color{
-          width: 60px;
-        }
-        .icon{
-          width: 50px;
-        }
-      }
-    }
-  }
-  body.green{
-    .switch{
-      .sphere{
-        transform: translate(120%);
-      }
-    }
-  }
-}
-
-//desktop
-@media  screen and (min-width:1441px){
   .switch{
     width: 78px;
     height: 30px;
@@ -618,4 +618,3 @@ body.green{
       }
     }
   }
-}

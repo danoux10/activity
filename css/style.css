@@ -36,7 +36,7 @@ body {
 
 #navbar {
   position: fixed;
-  margin-left: 30%;
+  right: 5%;
 }
 
 #navbar .switch {
@@ -104,6 +104,7 @@ body {
           flex-direction: row;
   padding: 1.5%;
   border-radius: 40px;
+  background: #ffffff;
   width: 100px;
 }
 
@@ -113,10 +114,20 @@ body {
   font-weight: bold;
 }
 
-.valid:hover {
-  background: none;
-  -webkit-transition: all ease .5s;
-  transition: all ease .5s;
+.form-bnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .view {
@@ -230,6 +241,7 @@ fieldset span input {
 
 fieldset span select {
   background: none;
+  width: 120px;
 }
 
 fieldset span input::-webkit-calendar-picker-indicator {
@@ -436,6 +448,60 @@ fieldset span .valid span svg {
   text-shadow: 0px 0px 2px #000000;
 }
 
+.horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: cursive;
+}
+
+input[type=color] {
+  border: 1px solid;
+  width: 40px;
+  height: 40px;
+}
+
+.check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.check .checkmark {
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+}
+
+.check p {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.check .uncheck {
+  display: block;
+}
+
+.check .checked {
+  display: none;
+}
+
+.check .checkbox:checked ~ .checkmark::after {
+  content: '✓';
+}
+
+.check .checkbox:checked ~ .checkmark::after .uncheck {
+  display: block;
+}
+
+.check .checkbox:checked ~ .checkmark::after .check {
+  display: none;
+}
+
 body.red .fill {
   fill: #880000;
 }
@@ -488,6 +554,10 @@ body.red input, body.red select {
 body.red .valid {
   border: 2px solid #ff0000;
   background: #880000;
+}
+
+body.red .valid:hover {
+  background: none;
 }
 
 body.red .stop button {
@@ -568,6 +638,7 @@ body.green .switch .sphere {
 }
 
 body.green .btn span {
+  fill: #008800;
   border: 1px solid #00ff00;
 }
 
@@ -630,124 +701,90 @@ body.green .choix:hover {
   background: #008800;
 }
 
-@media screen and (max-width: 1441px) {
-  .switch {
-    right: 1%;
-    top: 50%;
-    width: 50px;
-  }
-  #navbar {
-    top: 49%;
-    left: 5%;
-    width: 80%;
-  }
-  #navbar nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  #navbar nav a .icon-nav {
-    width: 50px;
-    margin-top: 2%;
-    padding: 10%;
-    border-radius: 50px;
-  }
-  #navbar nav a .graph {
-    width: 60px;
-  }
-  #navbar nav a .activity {
-    width: 80px;
-  }
-  #navbar nav a .color {
-    width: 60px;
-  }
-  #navbar nav a .icon {
-    width: 50px;
-  }
-  body.green .switch .sphere {
-    -webkit-transform: translate(120%);
-            transform: translate(120%);
-  }
+.switch {
+  width: 78px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'alien';
+  font-weight: bold;
+  font-size: 15px;
+  top: 1%;
+  right: 1%;
 }
 
-@media screen and (min-width: 1441px) {
-  .switch {
-    width: 78px;
-    height: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-family: 'alien';
-    font-weight: bold;
-    font-size: 15px;
-    top: 1%;
-    right: 1%;
-  }
-  #navbar {
-    right: 1%;
-    top: 30%;
-    width: 80px;
-  }
-  #navbar nav {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  #navbar nav a {
-    margin: 40% 0;
-  }
-  #navbar nav a .icon-nav {
-    width: 100%;
-    -webkit-transition: all ease .5s;
-    transition: all ease .5s;
-  }
-  #navbar nav a span {
-    width: 80px;
-    text-align: center;
-    position: fixed;
-    margin-right: 90px;
-    margin-top: 2%;
-    border-radius: 50px;
-    background: #000000;
-    z-index: 0;
-    text-shadow: 0px 0px 2px #888888;
-    display: none;
-  }
-  #navbar nav a .graph, #navbar nav a .color, #navbar nav a .icon {
-    margin-top: 2.5%;
-  }
-  #graph:hover .graph, #graph:hover .activity, #graph:hover .color, #graph:hover .icon, #activity:hover .graph, #activity:hover .activity, #activity:hover .color, #activity:hover .icon, #color:hover .graph, #color:hover .activity, #color:hover .color, #color:hover .icon, #icon:hover .graph, #icon:hover .activity, #icon:hover .color, #icon:hover .icon {
-    display: block;
-  }
-  body.red .switch::after {
-    content: 'Red';
-    color: #ff0000;
-    text-shadow: 1px 1px 1px #880000;
-  }
-  body.red #navbar nav {
-    border: 3px solid #880000;
-  }
-  body.red #navbar nav span {
-    color: #880000;
-  }
-  body.green .switch::before {
-    content: 'green';
-    color: #00ff00;
-    text-shadow: 1px 1px 1px #008800;
-  }
-  body.green #navbar nav {
-    border: 3px solid #008800;
-  }
-  body.green #navbar nav span {
-    color: #008800;
-  }
+#navbar {
+  right: 1%;
+  top: 30%;
+  width: 80px;
+}
+
+#navbar nav {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#navbar nav a {
+  margin: 40% 0;
+}
+
+#navbar nav a .icon-nav {
+  width: 100%;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+#navbar nav a span {
+  width: 80px;
+  text-align: center;
+  position: fixed;
+  margin-right: 90px;
+  margin-top: 2%;
+  border-radius: 50px;
+  background: #000000;
+  z-index: 0;
+  text-shadow: 0px 0px 2px #888888;
+  display: none;
+}
+
+#navbar nav a .graph, #navbar nav a .color, #navbar nav a .icon {
+  margin-top: 2.5%;
+}
+
+#graph:hover .graph, #graph:hover .activity, #graph:hover .color, #graph:hover .icon, #activity:hover .graph, #activity:hover .activity, #activity:hover .color, #activity:hover .icon, #color:hover .graph, #color:hover .activity, #color:hover .color, #color:hover .icon, #icon:hover .graph, #icon:hover .activity, #icon:hover .color, #icon:hover .icon {
+  display: block;
+}
+
+body.red .switch::after {
+  content: 'Red';
+  color: #ff0000;
+  text-shadow: 1px 1px 1px #880000;
+}
+
+body.red #navbar nav {
+  border: 3px solid #880000;
+}
+
+body.red #navbar nav span {
+  color: #880000;
+}
+
+body.green .switch::before {
+  content: 'green';
+  color: #00ff00;
+  text-shadow: 1px 1px 1px #008800;
+}
+
+body.green #navbar nav {
+  border: 3px solid #008800;
+}
+
+body.green #navbar nav span {
+  color: #008800;
 }
 /*# sourceMappingURL=style.css.map */
