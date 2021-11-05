@@ -32,13 +32,14 @@ create table  cards(
     nameCard varchar(255) not null
 );
 
+use activityBeta;
 create table graph(
     idGraph int(11) primary key auto_increment not null,
     jours date not null,
-    start time,
-    end time,
+    debut time,
+    fin time,
     difference time,
     card int(11) not null,
     info text not null,
-    ajoutday date not null
+    ajoutday varchar(255) not null
 )

@@ -8,20 +8,17 @@
   <link rel="stylesheet" href="../css/tailwind.css">
   <link rel="stylesheet" href="../css/style.css">
   <?php
-	date_default_timezone_set('Europe/Paris');
-	$todayTime = time();
-	$today = date("Y-m-d");
-	echo $today;
-	$years = substr($today,0,4);
-    $month = substr($today, 5,2);
-	$day = substr($today, 8,2);
-	$test = $years.'-'.$month.'-'.$day;
-	echo "<br>";
-    echo $test;
+		date_default_timezone_set('Europe/Paris');
+		$todayTime = time();
+		$today = date("Y-m-d");
+		$years = substr($today,0,4);
+		$month = substr($today, 5,2);
+		$day = substr($today, 8,2);
+		$dayTime = mktime(0,0,0,$month,$day,$years);
   ?>
 </head>
 <body class="red">
-  <?php include '../include/navbar.php' ?>
+  <?php include_once '../include/navbar.php' ?>
   <div class="view content">
   </div>
 
@@ -72,6 +69,10 @@
               <span>
                 <label for="hoursEnd">Heure fin</label>
                   <input type="time" name="hoursEndA" id="hoursEnd">
+              </span>
+              <span>
+                <label for="duration">durée</label>
+                  <input type="time" name="duration" id="duration">
               </span>
               <span>
                 <button type="submit" name="add" class="valid">

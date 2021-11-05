@@ -3,12 +3,10 @@
 	include	'../config/bdd.php';
    include '../model/beta.php';
 
-
+	@$ch=$_POST['icon'];
   if (isset($_POST['select'])){
-  	$affiche = implode('-',$_POST['icon']);
-//  	foreach ($_POST['icon'] as $info){
-//  		echo $info;
-//		}
+  	$choose = implode("-",$ch);
+  	echo $choose;
 	}
 
 ?>

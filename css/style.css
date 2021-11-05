@@ -34,6 +34,15 @@ body {
   display: block;
 }
 
+input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
 #navbar {
   position: fixed;
   right: 5%;
@@ -242,15 +251,6 @@ fieldset span input {
 fieldset span select {
   background: none;
   width: 120px;
-}
-
-fieldset span input::-webkit-calendar-picker-indicator {
-  -webkit-filter: invert(1);
-          filter: invert(1);
-}
-
-fieldset span select::-ms-expand {
-  display: none;
 }
 
 fieldset span .valid {
