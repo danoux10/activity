@@ -15,9 +15,10 @@
     <div class="border border-white">
       <fieldset class="border border-red-700">
         <legend>icon manage</legend>
-          <input type="radio" name="icon[]" value="0" id="">
-          <input type="radio" name="icon[]" value="1" id="">
-        <button class="border" type="submit" name="select">supprimer</button>
+          <label for="activityName">Name</label>
+          <input type="text" name="activityName" id="activityName">
+          
+        <button class="border" type="submit" name="select">valid</button>
       </fieldset>
     </div>
   </form>

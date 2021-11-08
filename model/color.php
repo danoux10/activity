@@ -75,8 +75,16 @@ if (isset($reset)){
             <button type="submit" name="preview">preview</button>
             <button type="submit" name="add">add</button>
             <button type="submit" name="reset">reset</button>
+            <button type="submit" name="view">view</button>
         </fieldset>
     </div>
 </form>
+<table>
+    <tbody>
+        <?php
+//            include '../include/afficheColor.php';
+        ?>
+    </tbody>
+</table>
 </body>
 </html>

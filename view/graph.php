@@ -27,7 +27,7 @@
 			$duration = $_POST['duration'];
 			echo $S.'<br>'.$E.'<br>'.$duration;
 		}else{
-			$duration = date("H:i",$fin-$debut);
+			$duration = date("H:i",$debut-$fin);
 			echo $S.'<br>'.$E.'<br>'.$duration;
 		}
 		$req = $bdd -> prepare("INSERT INTO graph set jours=?, debut = ?, fin = ?, difference = ?, card=?, info=?, ajoutday=?");
