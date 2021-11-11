@@ -10,94 +10,127 @@
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <form method="post" class="view">
+    <div class="containt">
+      <form method="post">
+        <fieldset class="view">
+            <legend>Activity</legend>
+            <div class="card-containt grid grid-cols-6 gap-1 mt-3 pl-1">
 
-  </form>
-  <form method="post" class="containt">
-    <fieldset class="add">
-        <legend>Create Activity</legend>
-        <span>
-            <label for="activityName">Name</label>
-            <input type="text" name="avtivityName" id="activityName">
-        </span>
-        <span>
-            <h3>Icon</h3>
-            <div class="grid grid-cols-5 gap-1 icon-contain">
-                <div class="icon">
-                    
-                </div>
-            </div>
-        </span>
-        <span>
-            <h3>Color</h3>
-            <div class="grid grid-cols-4 gap-2  justify-center items-center color-contain">
-                <input type="checkbox" class="radio" name="color" id="color">
-                <div class="color-small">
-                    <label for="color" class="color-choose">
-                        Text...
-                    </label>
-                </div>
-                <div class="color-small">
-                    <label for="color" class="color-choose">
-                        Text...
-                    </label>
-                </div>
-                <div class="color-small">
-                    <label for="color" class="color-choose">
-                        Text...
-                    </label>
-                </div>
-                <div class="color-small">
-                    <label for="color" class="color-choose">
-                        Text...
-                    </label>
-                </div>
-                <div class="color-small">
-                    <label for="color" class="color-choose">
-                        Text...
-                    </label>
-                </div>
-                <div class="color-small">
-                    <label for="color" class="color-choose">
-                        Text...
+                <input type="radio" class="card" name="activity[]" id="activityid">
+                <div class="activity-card border">
+                    <label for="activityid" class="card-inside">
+                        <img class="card-icon" src="../icon/6182620926e56.svg" alt="">
+                        <p class="card-title">Cours</p>
                     </label>
                 </div>
             </div>
-        </span>
-        
-        <div class="valid-btn">
-            <button type="submit" name="preview"><h3 class="btnTitle">Preview</h3></button>
-            <button type="submit" name="add"><h3 class="btnCheck">✓</h3><h3 class="btnTitle">Save</h3></button>
-        </div>
-    </fieldset>
-
-    <!-- <fieldset class="modify">
-        <legend>update Activity</legend>
-        <span>
-            <label for="activityName">Name</label>
-            <input type="text" name="avtivityName" id="activityName">
-        </span>
-        <span>
-            <h3>Icon</h3>
-            <div class="grid col-span-5 gap-1">
-                <div class="icon">
-
+        </fieldset>    <!-- php generation -->
+      </form>
+  </div>
+  <div class="form containt">
+    <form method="post">
+        <fieldset class="add">
+            <legend>Create Activity</legend>
+            <span>
+                <label for="activityName">Name</label>
+                <input type="text" name="avtivityName" id="activityName">
+            </span>
+            <div class="grid grid-cols-2 gap-10">
+                <!-- icon -->
+                <fieldset class="pl-1">
+                    <legend class="choose">Icon</legend>
+                    <div class="grid grid-cols-5 gap-1 icon-contain">
+                        <input type="radio" class="iconSelect" name="icon" id="icon">
+                        <label for="icon" class="icon">
+                            <img src="../icon/61826172a61f0.svg" class="color-choose">
+                        </label>
+                    </div>
+                </fieldset>
+                <!-- color -->
+                <fieldset class="pl-1">
+                    <legend class="choose">Color</legend>
+                    <div class="grid grid-cols-4 gap-2  justify-center color-contain">
+                        <input type="radio" class="radio" name="color" id="color">
+                        <div class="color-small">
+                            <label for="color" class="color-choose">
+                                Text...
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="submit-btn">
+                <button type="submit" name="preview" class="preview">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+                        <path id="Icon_awesome-eye" data-name="Icon awesome-eye" d="M21.867,10.968a12.363,12.363,0,0,0-21.734,0,1.132,1.132,0,0,0,0,1.064,12.363,12.363,0,0,0,21.734,0A1.132,1.132,0,0,0,21.867,10.968ZM11,16.75A5.379,5.379,0,0,1,5.5,11.5,5.379,5.379,0,0,1,11,6.25a5.379,5.379,0,0,1,5.5,5.25A5.377,5.377,0,0,1,11,16.75ZM11,8a3.8,3.8,0,0,0-.967.138,1.686,1.686,0,0,1-.18,2.268,1.893,1.893,0,0,1-2.376.172,3.416,3.416,0,0,0,1.492,3.815,3.8,3.8,0,0,0,4.264-.129,3.4,3.4,0,0,0,1.237-3.9A3.65,3.65,0,0,0,11,8Z" transform="translate(0 -4.5)"/>
+                    </svg>
+                    <h3 class="btnTitle">Preview</h3>
+                </button>
+                <button type="submit" name="add" class="save">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                        <path id="Icon_awesome-save" data-name="Icon awesome-save" d="M17.435,6.185l-3.37-3.37A1.929,1.929,0,0,0,12.7,2.25H1.929A1.929,1.929,0,0,0,0,4.179V18.321A1.929,1.929,0,0,0,1.929,20.25H16.071A1.929,1.929,0,0,0,18,18.321V7.549a1.929,1.929,0,0,0-.565-1.364ZM9,17.679a2.571,2.571,0,1,1,2.571-2.571A2.571,2.571,0,0,1,9,17.679ZM12.857,5.443V9.482a.482.482,0,0,1-.482.482H3.054a.482.482,0,0,1-.482-.482V5.3a.482.482,0,0,1,.482-.482h9.182a.482.482,0,0,1,.341.141l.14.14a.482.482,0,0,1,.141.341Z" transform="translate(0 -2.25)"/>
+                      </svg>                  
+                    <h3 class="btnTitle">Save</h3>
+                </button>
+            </div>
+        </fieldset>
+        <fieldset class="update">
+            <legend>update Activity</legend>
+            <span>
+                <label for="activityName">Name</label>
+                <input type="text" name="avtivityNameUpdate" id="activityName">
+            </span>
+            <div class="grid grid-cols-2 gap-10">
+                <!-- icon -->
+                <fieldset class="pl-1">
+                    <legend class="choose">Icon</legend>
+                    <div class="grid grid-cols-5 gap-1 icon-contain">
+                        <input type="radio" class="iconSelect" name="iconUpdate" id="icon">
+                        <label for="icon" class="icon">
+                            <img src="../icon/61826172a61f0.svg" for="color" class="color-choose">
+                        </label>
+                    </div>
+                </fieldset>
+                <!--  -->
+                <fieldset class="pl-1">
+                    <legend class="choose">Color</legend>
+                    <div class="grid grid-cols-4 gap-2  justify-center color-contain">
+                        <input type="radio" class="radio" name="colorUpdate" id="color">
+                        <div class="color-small">
+                            <label for="color" class="color-choose">
+                                Text...
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            
+            <div class="submit-btn">
+                <button type="submit" name="preview" class="preview">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+                        <path id="Icon_awesome-eye" data-name="Icon awesome-eye" d="M21.867,10.968a12.363,12.363,0,0,0-21.734,0,1.132,1.132,0,0,0,0,1.064,12.363,12.363,0,0,0,21.734,0A1.132,1.132,0,0,0,21.867,10.968ZM11,16.75A5.379,5.379,0,0,1,5.5,11.5,5.379,5.379,0,0,1,11,6.25a5.379,5.379,0,0,1,5.5,5.25A5.377,5.377,0,0,1,11,16.75ZM11,8a3.8,3.8,0,0,0-.967.138,1.686,1.686,0,0,1-.18,2.268,1.893,1.893,0,0,1-2.376.172,3.416,3.416,0,0,0,1.492,3.815,3.8,3.8,0,0,0,4.264-.129,3.4,3.4,0,0,0,1.237-3.9A3.65,3.65,0,0,0,11,8Z" transform="translate(0 -4.5)"/>
+                    </svg>
+                    <h3 class="btnTitle">Preview</h3>
+                </button>
+                <button type="submit" name="update" class="save">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                        <path id="Icon_awesome-save" data-name="Icon awesome-save" d="M17.435,6.185l-3.37-3.37A1.929,1.929,0,0,0,12.7,2.25H1.929A1.929,1.929,0,0,0,0,4.179V18.321A1.929,1.929,0,0,0,1.929,20.25H16.071A1.929,1.929,0,0,0,18,18.321V7.549a1.929,1.929,0,0,0-.565-1.364ZM9,17.679a2.571,2.571,0,1,1,2.571-2.571A2.571,2.571,0,0,1,9,17.679ZM12.857,5.443V9.482a.482.482,0,0,1-.482.482H3.054a.482.482,0,0,1-.482-.482V5.3a.482.482,0,0,1,.482-.482h9.182a.482.482,0,0,1,.341.141l.14.14a.482.482,0,0,1,.141.341Z" transform="translate(0 -2.25)"/>
+                      </svg>                  
+                    <h3 class="btnTitle">Save</h3>
+                </button>
+            </div>
+        </fieldset>
+        <!-- preview -->
+        <fieldset>
+            <legend>Preview</legend>
+            <div class="activity-Preview">
+                <div class="activity-inside">
+                    <img src="../icon/61826181889ee.svg" alt="" class="activity-icon">
+                    <h3 class="activity-title">cours</h3>
                 </div>
             </div>
-        </span>
-        <span>
-            <h3>Color</h3>
-            <div class="grid col-span-5 gap-1">
-                <div class="color">
-
-                </div>
-            </div>
-        </span>
-        <div class="valid-btn">
-            <button type="submit" name="preview"><h3 class="btnTitle">Preview</h3></button>
-            <button type="submit" name="update"><h3 class="btnCheck">✓</h3><h3 class="btnTitle">Save</h3></button>
-        </div>
-    </fieldset> -->
-  </form>
+        </fieldset>
+    </form>
+  </div>
 </body>
 </html>

@@ -29,12 +29,127 @@ body {
           align-items: center;
 }
 
+button[type=submit] {
+  border: 1px solid;
+  border-radius: 50px;
+  fill: #ffffff;
+}
+
+button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.containt {
+  width: 46vw;
+  height: 80vh;
+  margin-top: 5%;
+  margin-left: 1%;
+}
+
 fieldset {
   border: 1px solid #ffffff;
 }
 
+.view {
+  border: 1px solid;
+  height: 80vh;
+  overflow: scroll;
+}
+
+.view::-webkit-scrollbar {
+  width: 3px;
+  height: 0;
+  background: #000;
+}
+
+.view::-webkit-scrollbar-track {
+  background: none;
+}
+
+.view::-webkit-scrollbar-corner {
+  background: none;
+}
+
+.view::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  width: 6px;
+}
+
+.card:checked ~ .activity-card {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.activity-card {
+  background: #ffffff;
+  width: 120px;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.activity-card .card-inside {
+  border: 2px solid darkgoldenrod;
+  background: #000;
+  color: darkgoldenrod;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100px;
+  height: 50px;
+  font-family: cursive;
+}
+
+.activity-card .card-inside .card-icon {
+  margin-right: 5px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  width: 30px;
+}
+
+.form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 legend {
   font-family: 'secret';
+}
+
+.choose {
+  font-family: sans-serif;
 }
 
 input {
@@ -44,19 +159,19 @@ input {
 }
 
 .icon-contain, .color-contain {
-  border: 1px solid #ffffff;
+  width: 400px;
   height: 10vh;
   overflow: scroll;
 }
 
 .icon-contain::-webkit-scrollbar, .color-contain::-webkit-scrollbar {
-  width: 6px;
+  width: 3px;
   height: 0;
   background: #000;
 }
 
 .icon-contain::-webkit-scrollbar-track, .color-contain::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: none;
 }
 
 .icon-contain::-webkit-scrollbar-corner, .color-contain::-webkit-scrollbar-corner {
@@ -68,7 +183,7 @@ input {
   width: 6px;
 }
 
-.radio {
+.radio, .iconSelect, .card {
   display: none;
 }
 
@@ -77,8 +192,19 @@ input {
           filter: grayscale(100%);
 }
 
+.icon {
+  border: 1px solid;
+  background: #888888;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.iconSelect:checked ~ .icon {
+  background: #00ff00;
+}
+
 .color-small {
-  border: 1px solid #ff0000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,6 +215,7 @@ input {
       -ms-flex-align: center;
           align-items: center;
   height: 45px;
+  width: 80px;
   background: #ffffff;
 }
 
@@ -99,5 +226,76 @@ input {
   -webkit-box-shadow: 0px 0px 0px 28px 9px silver;
           box-shadow: 0px 0px 0px 28px 9px silver;
   text-align: center;
+}
+
+.submit-btn {
+  margin: 3.5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.submit-btn .preview, .submit-btn .save {
+  width: 100px;
+}
+
+.submit-btn .preview svg {
+  width: 25px;
+  margin-right: 2px;
+}
+
+.submit-btn .save svg {
+  width: 20px;
+  margin-right: 2px;
+}
+
+.activity-Preview {
+  background: #ffffff;
+  margin-bottom: 1%;
+  width: 50%;
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.activity-Preview .activity-inside {
+  border: 3px solid darkgoldenrod;
+  background: #000;
+  color: darkgoldenrod;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  padding: 1% 0;
+  font-family: cursive;
+}
+
+.activity-Preview .activity-inside .activity-icon {
+  margin-right: 5px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  width: 50%;
+}
+
+.activity-Preview .activity-inside .activity-title {
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */
