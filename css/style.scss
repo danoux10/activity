@@ -62,7 +62,7 @@ body {
   height: 40vh;
 }
 
-button[type="submit"] {
+button[type=submit] {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,18 +71,23 @@ button[type="submit"] {
   width: 100px;
 }
 
+button[type=file]{
+  border: none;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   display: none;
 }
 
 .save-preview {
-  fill: $white;
+  fill: white;
   button {
     margin: 0 5%;
   }
   .preview-btn {
     svg {
+      fill: $white;
       margin-right: 2px;
     }
     .eyes-btn {
@@ -486,7 +491,7 @@ input[type="color"] {
 }
 //ANCHOR Icon select
 
-.icon {
+.icon-select {
   border: 1px solid;
   padding: 3px;
   width: 45px;
@@ -543,6 +548,56 @@ input[type="color"] {
     }
   }
 }
+
+//icon page
+//LINK icon 
+.icon-inside{
+  margin: 0;
+  border: 1px solid;
+  width: 60px;
+  padding: 2px;
+  .icon-view{
+    filter: invert(100%);
+    width: 60px;
+  }
+}
+
+.file::-webkit-file-upload-button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $red;
+    border: 3px double ;
+  }
+
+.icon{
+  .valid-btn{
+    width: 150px;
+  }
+}
+
+//color page
+//LINK color page
+.color-field{
+  width: 500px;
+  span{
+    label{
+      font-family: cursive;
+    }
+  }
+}
+
+input[type=color]{
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+}
+
+//ANCHOR preview color
+.preview-color{
+  
+}
 //red mode
 //LINK red mod
 
@@ -588,7 +643,7 @@ body.red {
   input::-webkit-calendar-picker-indicator {
     filter: (1);
   }
-  input,
+  input[type=date],input[type=text],input[type=time]
   select {
     border: 2px solid $dark-red;
   }

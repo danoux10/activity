@@ -69,7 +69,7 @@ body {
   height: 40vh;
 }
 
-button[type="submit"] {
+button[type=submit] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,13 +84,17 @@ button[type="submit"] {
   width: 100px;
 }
 
+button[type=file] {
+  border: none;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   display: none;
 }
 
 .save-preview {
-  fill: #ffffff;
+  fill: white;
 }
 
 .save-preview button {
@@ -98,6 +102,7 @@ input[type="radio"] {
 }
 
 .save-preview .preview-btn svg {
+  fill: #ffffff;
   margin-right: 2px;
 }
 
@@ -666,13 +671,13 @@ input[type="color"] {
   background: white;
 }
 
-.icon {
+.icon-select {
   border: 1px solid;
   padding: 3px;
   width: 45px;
 }
 
-.icon .icon-choose {
+.icon-select .icon-choose {
   width: 45px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
@@ -748,6 +753,46 @@ input[type="color"] {
   font-size: 20px;
 }
 
+.icon-inside {
+  margin: 0;
+  border: 1px solid;
+  width: 60px;
+  padding: 2px;
+}
+
+.icon-inside .icon-view {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  width: 60px;
+}
+
+.file::-webkit-file-upload-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff0000;
+  border: 3px double;
+}
+
+.icon .valid-btn {
+  width: 150px;
+}
+
+.color-field {
+  width: 500px;
+}
+
+.color-field span label {
+  font-family: cursive;
+}
+
+input[type=color] {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+}
+
 body.red .fill {
   fill: #880000;
 }
@@ -793,8 +838,8 @@ body.red input::-webkit-calendar-picker-indicator {
           filter: 1;
 }
 
-body.red input,
-body.red select {
+body.red input[type=date], body.red input[type=text], body.red input[type=time]
+select {
   border: 2px solid #880000;
 }
 
