@@ -30,6 +30,10 @@ body {
           align-items: center;
 }
 
+.show {
+  display: block;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,6 +73,22 @@ body {
   height: 40vh;
 }
 
+.preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
 button[type=submit] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,10 +115,16 @@ input[type="radio"] {
 
 .save-preview {
   fill: white;
+  margin-bottom: 32px;
+  margin-top: 32px;
 }
 
 .save-preview button {
   margin: 0 5%;
+}
+
+.save-preview .preview-btn {
+  font-family: cursive;
 }
 
 .save-preview .preview-btn svg {
@@ -110,13 +136,27 @@ input[type="radio"] {
   width: 25px;
 }
 
+.save-preview .valid-btn {
+  font-family: cursive;
+}
+
 .save-preview .valid-btn .savecard-btn svg {
   width: 18px;
   margin-right: 4px;
 }
 
-.visible {
-  display: block;
+.icon-btn:checked ~ .icon-select {
+  background: #ffffff;
+}
+
+.icon-btn:checked ~ .icon-select .icon-choose {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.color-btn:checked ~ .color-select {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -281,8 +321,9 @@ select::-ms-expand {
 }
 
 .btn {
-  margin-top: 1%;
-  margin-left: 1%;
+  position: fixed;
+  right: 6.5%;
+  top: 42%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,6 +331,9 @@ select::-ms-expand {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .btn span {
@@ -778,11 +822,7 @@ input[type="color"] {
   width: 150px;
 }
 
-.color-field {
-  width: 500px;
-}
-
-.color-field span label {
+.color-field span {
   font-family: cursive;
 }
 

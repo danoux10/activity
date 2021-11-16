@@ -34,6 +34,9 @@ body {
   align-items: center;
 }
 
+.show {
+  display: block;
+}
 //navbar style
 //LINK navbar
 
@@ -62,6 +65,16 @@ body {
   height: 40vh;
 }
 
+.preview{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden{
+  display: none;
+}
+
 button[type=submit] {
   display: flex;
   align-items: center;
@@ -79,13 +92,16 @@ input[type="checkbox"],
 input[type="radio"] {
   display: none;
 }
-
+//ANCHOR valid save & preview btn
 .save-preview {
   fill: white;
+  margin-bottom: 32px;
+  margin-top: 32px;
   button {
     margin: 0 5%;
   }
   .preview-btn {
+    font-family: cursive;
     svg {
       fill: $white;
       margin-right: 2px;
@@ -98,6 +114,7 @@ input[type="radio"] {
   }
 
   .valid-btn {
+    font-family: cursive;
     .savecard-btn {
       svg {
         width: 18px;
@@ -106,12 +123,23 @@ input[type="radio"] {
     }
   }
 }
-
-//graph page style
-//LINK graph
-.visible {
-  display: block;
+//ANCHOR selected
+.icon-btn:checked{
+  ~ .icon-select{
+    background: $white;
+    .icon-choose{
+      filter: grayscale(100%);
+    }
+  }
 }
+
+.color-btn:checked{
+  ~ .color-select{
+    filter: grayscale(100%);
+  }
+}
+//graph page style
+//LINK grap
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -222,10 +250,12 @@ select::-ms-expand {
   margin-top: 1%;
 }
 .btn {
-  margin-top: 1%;
-  margin-left: 1%;
+  position: fixed;
+  right: 6.5%;
+  top: 42%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   span {
     align-items: center;
     border: 1px solid;
@@ -579,14 +609,10 @@ input[type="color"] {
 //color page
 //LINK color page
 .color-field{
-  width: 500px;
   span{
-    label{
-      font-family: cursive;
-    }
+    font-family: cursive;
   }
 }
-
 input[type=color]{
   width: 50px;
   height: 50px;
