@@ -13,14 +13,15 @@
   </head>
   <body class="red graph">
     <div class="view content">
-      <!-- graphique genreration -->
+      <!--LINK graphique genreration -->
     </div>
 
     <div class="form content">
       <form method="post">
         <div class="graphFormAM">
+          <!-- LINK btn choose -->
           <div class="btn">
-            <span class="fill cursor-pointer" id="ajout">
+            <span class="fill cursor-pointer" id="add-btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.5 22.5">
                 <path
                   id="Icon_ionic-md-add"
@@ -30,7 +31,7 @@
                 />
               </svg>
             </span>
-            <span class="fill mt-2 cursor-pointer" id="modif">
+            <span class="fill mt-2 cursor-pointer" id="update-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 35.998 35.999"
@@ -43,7 +44,7 @@
                 />
               </svg>
             </span>
-            <span class="fill mt-2 cursor-pointer" id="view">
+            <span class="fill mt-2 cursor-pointer" id="view-btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
                 <path
                   id="Icon_awesome-eye"
@@ -55,7 +56,8 @@
             </span>
           </div>
           <div>
-            <fieldset id="ajouter" class="large formadd">
+            <!-- LINK add data -->
+            <fieldset id="add" class="large formadd">
               <legend>Add activity</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-3 activitybt">
@@ -102,7 +104,7 @@
                 <div class="button">
                   <!-- button delete activity -->
                   <button
-                    type="supprime"
+                    type="submit"
                     name="supprime"
                     class="supprimer rounded-full"
                   >
@@ -159,8 +161,8 @@
                 </div>
               </div>
             </fieldset>
-            <!-- modifier -->
-            <fieldset id="modifier" class="large formadd hidden">
+            <!--LINK modifier -->
+            <fieldset id="update" class="large formadd">
               <legend>modify activity</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-0 activitybt">
@@ -196,8 +198,8 @@
                 <!-- info (date select etc...) -->
               </div>
             </fieldset>
-            <!-- view -->
-            <fieldset class="large formview">
+            <!--LINK view -->
+            <fieldset id="preview" class="large">
               <legend>view</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-3 activitybt">
@@ -233,7 +235,7 @@
                 </span>
               </div>
               <!-- button -->
-              <div class="grid grid-cols-3 gap-14 justify-items-center button">
+              <div id="preview" class="grid grid-cols-3 gap-14 justify-items-center button">
                 <button type="submit" name="pie" class="choix">
                   <span class="bt-icon">
                     <svg
@@ -332,6 +334,6 @@
         </div>
       </form>
     </div>
-    <script src="../js/sript.js"></script>
+    <script src="../js/toggleView.js"></script>
   </body>
 </html>

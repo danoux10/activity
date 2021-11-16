@@ -20,8 +20,8 @@
             <div class="card-containt grid grid-cols-6 gap-1 mt-3 pl-1">
               <!-- TODO activity card -->
               <!-- ! php generation -->
-              <input type="radio" class="card" name="activity[]" id="activityid" />
-              <div class="activity-card">
+              <input type="radio" class="color-btn" name="activity[]" id="activityid" />
+              <div class="activity-card color-select">
                 <label for="activityid" class="row card-inside">
                   <img class="card-icon" src="../icon/6182620926e56.svg" alt=""/>
                   <p class="card-title">Cours</p>
@@ -34,8 +34,9 @@
     <div class="form content">
       <form action="" method="post">
         <div class="graphFormAM">
+          <!-- LINK btn choose -->
           <div class="btn">
-            <span class="fill cursor-pointer" id="ajout">
+            <span class="fill cursor-pointer add-btn" id="add-btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.5 22.5">
                 <path
                   id="Icon_ionic-md-add"
@@ -45,7 +46,7 @@
                 />
               </svg>
             </span>
-            <span class="fill mt-2 cursor-pointer" id="modif">
+            <span class="fill mt-2 cursor-pointer update-btn" id="update-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 35.998 35.999"
@@ -58,7 +59,7 @@
                 />
               </svg>
             </span>
-            <span class="fill mt-2 cursor-pointer" id="view">
+            <span class="fill mt-2 cursor-pointer view-btn" id="view-btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
                 <path
                   id="Icon_awesome-eye"
@@ -70,7 +71,8 @@
             </span>
           </div>
           <div>
-            <fieldset id="ajouter" class="large">
+            <!--LINK add  activity-->
+            <fieldset id="add" class="large add">
               <legend class="secret">Add Activity</legend>
               <span class="row">
                 <label for="name" class="mr-1">Nom</label>
@@ -80,10 +82,9 @@
                 <!-- icon -->
                 <fieldset class="selected">
                   <legend class="cursive">Icon</legend>
-                  <!-- ! php generation -->
-                  <!-- TODO icon select -->
+                  <!-- ANCHOR icon select -->
                   <div class="grid grid-cols-5 gap-1 icon-contain pl-2">
-                    <input type="radio" class="iconSelect" name="icon" id="icon"/>
+                    <input type="radio" class="icon-btn" name="icon" id="icon"/>
                     <label for="icon" class="icon-select">
                       <img src="../icon/61826172a61f0.svg" class="icon-choose"/>
                     </label>
@@ -92,12 +93,11 @@
                 <!-- color -->
                 <fieldset class="selected">
                   <legend class="cursive">Color</legend>
-                  <!-- ! php generation -->
-                  <!-- TODO color select -->
+                  <!-- ANCHOR color select -->
                   <div class="grid grid-cols-3 gap-2 color-contain pl-2">
-                    <input type="radio" class="radio" name="color" id="color" />
-                    <div class="color-small">
-                      <label for="color" class="color-choose"> Text... </label>
+                    <input type="radio" class="color-btn" name="color" id="color" />
+                    <div class="color-small color-select">
+                      <label for="color" class="color-choose">Text... </label>
                     </div>
                   </div>
                 </fieldset>
@@ -131,7 +131,8 @@
                 </button>
               </div>
             </fieldset>
-            <fieldset id="MAJ" class="large hidden">
+            <!-- LINK update -->
+            <fieldset id="update" class="large update">
               <legend class="secret">update Activity</legend>
               <span class="row">
                 <label for="name" class="mr-1">Nom</label>
@@ -142,7 +143,7 @@
                 <fieldset class="selected">
                   <legend class="cursive">Icon</legend>
                   <!-- ! php generation -->
-                  <!-- TODO icon select -->
+                  <!-- ANCHOR icon select -->
                   <div class="grid grid-cols-5 gap-1 icon-contain pl-2">
                     <input
                       type="radio"
@@ -161,8 +162,7 @@
                 <!-- color -->
                 <fieldset class="selected">
                   <legend class="cursive">Color</legend>
-                  <!-- ! php generation -->
-                  <!-- TODO color select -->
+                  <!-- ANCHOR color select -->
                   <div class="grid grid-cols-4 gap-2 color-contain pl-2">
                     <input type="radio" class="radio" name="color" id="color" />
                     <div class="color-small">
@@ -171,7 +171,7 @@
                   </div>
                 </fieldset>
               </div>
-              <div class="save-preview mt-8 row justify-center">
+              <div class="save-preview row justify-center">
                 <button type="submit" name="preview-btn" class="preview-btn">
                   <span class="eyes-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
@@ -200,7 +200,8 @@
                 </button>
               </div>
             </fieldset>
-            <fieldset id="preview" class="large justify-center items-center flex">
+            <!-- LINK preview -->
+            <fieldset id="preview" class="large preview secret">
               <legend class="secret">Preview</legend>
               <div class="activity-Preview">
                 <div class="activity-inside">
@@ -213,5 +214,6 @@
         </div>
       </form>
     </div>
+    <script src="../js/toggleView.js"></script>
   </body>
 </html>
