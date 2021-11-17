@@ -75,6 +75,25 @@ body {
   display: none;
 }
 
+.valid {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 1.5%;
+  border-radius: 40px;
+  background: $white;
+  width: 100px;
+  p {
+    &::before {
+      content: "✓";
+      margin-right: 0.5vw;
+      font-weight: bold;
+    }
+  }
+}
+
 button[type=submit] {
   display: flex;
   align-items: center;
@@ -139,7 +158,7 @@ input[type="radio"] {
   }
 }
 //graph page style
-//LINK grap
+//LINK graph
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -184,6 +203,12 @@ select::-ms-expand {
   }
 }
 
+.valid-graph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 //style page activity
 .activity {
   background: none;
@@ -200,24 +225,6 @@ select::-ms-expand {
 
 .content {
   margin-top: 5%;
-}
-.valid {
-  margin-top: 2%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  padding: 1.5%;
-  border-radius: 40px;
-  background: $white;
-  width: 100px;
-  p {
-    &::before {
-      content: "✓";
-      margin-right: 0.5vw;
-      font-weight: bold;
-    }
-  }
 }
 
 .form-bnt {
@@ -620,12 +627,8 @@ input[type=color]{
   background: none;
 }
 
-//ANCHOR preview color
-.preview-color{
-  
-}
 //red mode
-//LINK red mod
+//LINK red mode
 
 //green mode
 //LINK green mode
@@ -667,10 +670,10 @@ body.red {
     }
   }
   input::-webkit-calendar-picker-indicator {
-    filter: (1);
+    filter: invert(100%);
   }
-  input[type=date],input[type=text],input[type=time]
-  select {
+  
+  input[type=date],input[type=text],input[type=time],select {
     border: 2px solid $dark-red;
   }
   .valid {

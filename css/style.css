@@ -89,6 +89,32 @@ body {
   display: none;
 }
 
+.valid {
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1.5%;
+  border-radius: 40px;
+  background: #ffffff;
+  width: 100px;
+}
+
+.valid p::before {
+  content: "✓";
+  margin-right: 0.5vw;
+  font-weight: bold;
+}
+
 button[type=submit] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,6 +244,18 @@ select::-ms-expand {
   display: none;
 }
 
+.valid-graph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .activity {
   background: none;
 }
@@ -233,32 +271,6 @@ select::-ms-expand {
 
 .content {
   margin-top: 5%;
-}
-
-.valid {
-  margin-top: 2%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding: 1.5%;
-  border-radius: 40px;
-  background: #ffffff;
-  width: 100px;
-}
-
-.valid p::before {
-  content: "✓";
-  margin-right: 0.5vw;
-  font-weight: bold;
 }
 
 .form-bnt {
@@ -874,12 +886,11 @@ body.red .btn span {
 }
 
 body.red input::-webkit-calendar-picker-indicator {
-  -webkit-filter: 1;
-          filter: 1;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
-body.red input[type=date], body.red input[type=text], body.red input[type=time]
-select {
+body.red input[type=date], body.red input[type=text], body.red input[type=time], body.red select {
   border: 2px solid #880000;
 }
 

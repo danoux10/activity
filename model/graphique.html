@@ -58,7 +58,7 @@
           <div>
             <!-- LINK add data -->
             <fieldset id="add" class="large formadd">
-              <legend>Add activity</legend>
+              <legend class="secret">Add activity</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-3 activitybt">
                 <span>
@@ -162,34 +162,34 @@
               </div>
             </fieldset>
             <!--LINK modifier -->
-            <fieldset id="update" class="large formadd">
-              <legend>modify activity</legend>
+            <fieldset id="update" class="large formadd ">
+              <legend class="secret">modify activity</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-0 activitybt">
                 <span>
-                  <label for="date">Date</label>
-                  <input type="date" name="dateEdit" id="date" />
+                  <label for="dateUpdate">Date</label>
+                  <input type="date" name="dateEdit" id="dateUpdate" />
                 </span>
                 <span>
-                  <label for="activity">Activiter</label>
-                  <select type="date" name="activityEdit" id="activity">
+                  <label for="activityUpdate">Activiter</label>
+                  <select type="date" name="activityEdit" id="activityUpdate">
                     <option value="0">Activiter</option>
                   </select>
                 </span>
                 <span>
-                  <label for="info">Description</label>
-                  <input type="text" id="info" name="descriptionEdit" />
+                  <label for="infoUpdate">Description</label>
+                  <input type="text" id="infoUpdate" name="descriptionEdit" />
                 </span>
                 <span>
-                  <label for="hoursStart">Heure début</label>
-                  <input type="time" name="hoursStartEdit" id="hoursStart" />
+                  <label for="hoursStartUpdate">Heure début</label>
+                  <input type="time" name="hoursStartEdit" id="hoursStartUpdate" />
                 </span>
                 <span>
-                  <label for="hoursEnd">Heure fin</label>
-                  <input type="time" name="hoursEndEdit" id="hoursEnd" />
+                  <label for="hoursEndUpdate">Heure fin</label>
+                  <input type="time" name="hoursEndEdit" id="hoursEndUpdate" />
                 </span>
                 <span>
-                  <button type="submit" name="modif" class="valid">
+                  <button type="submit" name="modif" class="valid valid-graph">
                     <p>Valider</p>
                   </button>
                 </span>
@@ -199,12 +199,12 @@
               </div>
             </fieldset>
             <!--LINK view -->
-            <fieldset id="preview" class="large">
-              <legend>view</legend>
+            <fieldset id="preview" class="large ">
+              <legend class="secret">view</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-3 activitybt">
                 <span>
-                  <label for="dateStrat">Date Start</label>
+                  <label for="dateStart">Date Start</label>
                   <input type="date" name="dateStart" id="dateStart" />
                 </span>
                 <span>
@@ -235,7 +235,7 @@
                 </span>
               </div>
               <!-- button -->
-              <div id="preview" class="grid grid-cols-3 gap-14 justify-items-center button">
+              <div class="grid grid-cols-3 gap-14 justify-items-center button mt-10danybarbe10@gmail.com">
                 <button type="submit" name="pie" class="choix">
                   <span class="bt-icon">
                     <svg
