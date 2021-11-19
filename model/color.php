@@ -8,14 +8,7 @@
     <title>color</title>
     <?php
       include_once '../include/headContaint.php';
-      $back = '#888888';
-	  $fill = '#000000';
-	  $borderValue = '#b8860b';
-	  $border = '3px solid #b8860b';
-	  $shadowValue = '#c0c0c0';
-	  $shadow = '0px 0px 28px 0px #c0c0c0';
-	  $text = '#ffffff';
-    
+      include_once '../view/color.php';
     ?>
 </head>
 <body class="red color-Page">
@@ -82,25 +75,25 @@
                         <span class="row items-center justify-around">
                             <label for="back">Background</label>
                             <input value="<?php echo $back; ?>" type="color" name="back" id="back">
-                           <input type="checkbox" name="activeBack" class="checkbox" id="checkback">
+                           <input type="checkbox" name="activeBack" class="checkbox" id="checkback" <?php echo @ $check ?>>
                             <label class="checklabel" for="checkback"></label>
                         </span>
                         <span class="row items-center justify-around">
                             <label for="fill">Fill</label>
                             <input value="<?php echo $fill; ?>" type="color" name="fill" id="fill">
-                            <input type="checkbox" name="activeFill" class="checkbox" id="checkfill">
+                            <input type="checkbox" name="activeFill" class="checkbox" id="checkfill" <?php echo @ $check ?>>
                             <label for="checkfill" class="checklabel"></label>
                         </span>
                         <span class="row items-center justify-around">
                             <label for="border">Border</label>
                             <input value="<?php echo $borderValue; ?>" type="color" name="border" id="border">
-                            <input type="checkbox" name="activeBorder" class="checkbox" id="checkborder">
+                            <input type="checkbox" name="activeBorder" class="checkbox" id="checkborder" <?php echo @ $check ?>>
                             <label for="checkborder" class="checklabel"></label>
                         </span>
                         <span class="row items-center justify-around">
                             <label for="shadow">Shadow</label>
                             <input value="<?php echo $shadowValue; ?>" type="color" name="shadow" id="shadow">
-                            <input type="checkbox" name="activeShadow" class="checkbox" id="checkshadow">
+                            <input type="checkbox" name="activeShadow" class="checkbox" id="checkshadow" <?php echo @ $check ?>>
                             <label for="checkshadow" class="checklabel"></label>
                         </span>
                         <span class="row items-center justify-around">
@@ -195,8 +188,8 @@
                 <!-- LINK preview color -->
                 <fieldset id="preview" class="large preview">
                     <legend class="secret">Preview</legend>
-                    <div class="activity-Preview" style="background: <?php echo $back ?>;color: <?php echo $text?>">
-                        <div class="activity-inside" style="color: <?php echo $text?>;background:<?php echo $fill ?>; ">
+                    <div class="activity-Preview" style="background: <?php echo $back ?>;">
+                        <div class="activity-inside" style="color: <?php echo $text?>;background:<?php echo $fill ?>;border:<?php echo $border?>;box-shadow: <?php echo $shadow?> ">
                             <h3 class="activity-title">text...</h3>
                         </div>
                     </div>
@@ -205,6 +198,6 @@
           </div>
       </form>
   </div>
-  <script src="../js/toggleView.js"></script>
+<?php include_once '../include/footer.html'?>
 </body>
 </html>

@@ -6,10 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>icon</title>
-	<link rel="stylesheet" href="../css/tailwind.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<?php
+		include_once '../include/headContaint.php';
+		include_once '../view/icon.php';
+	?>
 </head>
 <body class="red icon">
+    <?php include_once '../include/navbar.html'; ?>
     <div class="content view">
         <form action="" method="post">
             <fieldset>
@@ -18,10 +21,7 @@
                     <div class="card-containt grid grid-cols-6 gap-0 mt-3 pl-1">
                       <!-- ANCHOR activity card -->
                       <!-- ! php generation -->
-                      <input type="radio" class="card" name="icon[]" id="iconId" />
-                      <label for="iconId" class="row icon-inside">
-                        <img class="icon-view" src="../icon/6182620926e56.svg" alt=""/>
-                      </label>
+                      <?php include_once '../include/viewIcon.php'?>
                   </div>
             </fieldset>
         </form>
@@ -54,7 +54,7 @@
                         />
                     </svg>
                     </span>
-                    <span class="fill mt-2 cursor-pointer" id="viw-btn">
+                    <span class="fill mt-2 cursor-pointer" id="view-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
                         <path
                         id="Icon_awesome-eye"
@@ -70,9 +70,15 @@
                 <fieldset class="p-2">
                     <legend>Add Icon</legend>
                     <div class="save-preview row">
-                        <span>
-                            <input type="file" name="iconAdd" accept=".svg" id="" class="file">
-                        </span>
+                        <div>
+                            <span>
+                                <input type="file" name="iconAdd" accept=".svg" id="" class="file">
+                            </span>
+                            <span class="row mt-2">
+                                <label for="iconName" class="mr-1">Name</label>
+                                <input type="text" id="iconName" name="iconName" require>
+                            </span>
+                        </div>
                         <button type="submit" name="add" class="valid-btn">
                           <span class="savecard-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
@@ -86,5 +92,6 @@
             </div>
         </form>
     </div>
+    <?php include_once '../include/footer.html'?>
 </body>
 </html>

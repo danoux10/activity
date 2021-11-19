@@ -1,7 +1,4 @@
 <?php
-	include '../config/bdd.php';
-	include '../model/icon.php';
-
 	@ $ajout = $_POST['add'];
 	@ $supprim = $_POST['delete'];
 
@@ -11,12 +8,12 @@
 			if($_FILES['iconAdd']['error'] !== UPLOAD_ERR_OK){
 				echo 'erreur de téléchargement';
 			}else{
-				$name=uniqid();
+				$name=htmlspecialchars($_POST['iconName']);
 				$info=pathinfo($_FILES['iconAdd']['name']);
 				$src = '../icon/'.$name.'.'.$info['extension'];
 				move_uploaded_file($_FILES['iconAdd']['tmp_name'],'../icon/'.$name.'.'.$info['extension']);
-				$addIcon = $bdd->prepare('insert into icon set tag=?');
-				$addIcon->execute([$src]);
+				$addIcon = $bdd->prepare('insert into icon set tag=?, iconName=?');
+				$addIcon->execute([$src,$name]);
 			}
 		}
 	}

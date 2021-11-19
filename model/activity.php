@@ -7,11 +7,14 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <?php
+		include_once '../include/headContaint.php';
+		include_once '../view/color.php';
+	?>
     <title>activity</title>
-    <link rel="stylesheet" href="../css/tailwind.css" />
-    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="red activity-page">
+  <?php include_once '../include/navbar.html'; ?>
     <div class="view content">
       <form action="" method="post">
         <fieldset class="cards">
@@ -85,10 +88,7 @@
                   <legend class="cursive">Icon</legend>
                   <!-- ANCHOR icon select -->
                   <div class="grid grid-cols-5 gap-1 icon-contain pl-2">
-                    <input type="radio" class="icon-btn" name="icon" id="icon"/>
-                    <label for="icon" class="icon-select">
-                      <img src="../icon/61826172a61f0.svg" class="icon-choose"/>
-                    </label>
+                    <?php include '../include/selectIcon.php';?>
                   </div>
                 </fieldset>
                 <!-- color -->
@@ -96,10 +96,7 @@
                   <legend class="cursive">Color</legend>
                   <!-- ANCHOR color select -->
                   <div class="grid grid-cols-3 gap-2 color-contain pl-2">
-                    <input type="radio" class="color-btn" name="color" id="color" />
-                    <div class="color-small color-select">
-                      <label for="color" class="color-choose">Text... </label>
-                    </div>
+                   <?php include '../include/selectColor.php'?>
                   </div>
                 </fieldset>
               </div>
@@ -215,6 +212,6 @@
         </div>
       </form>
     </div>
-    <script src="../js/toggleView.js"></script>
+	<?php include_once '../include/footer.html'?>
   </body>
 </html>

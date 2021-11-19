@@ -107,8 +107,8 @@ button[type=file]{
   border: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   display: none;
 }
 //ANCHOR valid save & preview btn
@@ -160,8 +160,8 @@ input[type="radio"] {
 //graph page style
 //LINK graph
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
+input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
 }
 select::-ms-expand {
   display: none;
@@ -487,9 +487,6 @@ input[type="color"] {
   justify-content: center;
   align-items: center;
   .card-inside {
-    border: 2px solid darkgoldenrod;
-    background: #000;
-    color: darkgoldenrod;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -548,10 +545,6 @@ input[type="color"] {
   background: $white;
   .color-choose {
     width: 80px;
-    color: darkgoldenrod;
-    background: #000;
-    border: 2px solid darkgoldenrod;
-    box-shadow: 0px 0px 0px 28px 9px silver;
     text-align: center;
   }
 }
@@ -566,9 +559,6 @@ input[type="color"] {
   justify-content: center;
   align-items: center;
   .activity-inside {
-    border: 3px solid darkgoldenrod;
-    background: #000;
-    color: darkgoldenrod;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -627,7 +617,19 @@ input[type=color]{
   background: none;
 }
 
+.checklabel{
+  width: 0;
+}
 
+.checklabel::after{
+  content: 'active';
+}
+
+.checkbox:checked{
+  ~ .checklabel::after{
+    content: 'desactive';
+  }
+}
 //red mode
 //LINK red mode
 
