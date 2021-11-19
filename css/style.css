@@ -3,31 +3,22 @@
   font-family: "alien";
   src: url("../font/alienware.TTF");
 }
-
 @font-face {
   font-family: "secret";
   src: url("../font/TS.OTF");
 }
-
 body {
   background: #000000;
   margin: 1%;
   color: #ffffff;
-  display: -ms-grid;
   display: grid;
   grid-auto-columns: 1fr;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1% 1%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .show {
@@ -35,33 +26,18 @@ body {
 }
 
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .row-reverse {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .column {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .secret {
@@ -74,15 +50,9 @@ body {
 }
 
 .preview {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .hidden {
@@ -91,24 +61,15 @@ body {
 
 .valid {
   margin-top: 2%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
   padding: 1.5%;
   border-radius: 40px;
   background: #ffffff;
   width: 100px;
 }
-
 .valid p::before {
   content: "✓";
   margin-right: 0.5vw;
@@ -116,15 +77,9 @@ body {
 }
 
 button[type=submit] {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   border: 1px solid;
   border-radius: 50px;
   width: 100px;
@@ -134,8 +89,8 @@ button[type=file] {
   border: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   display: none;
 }
 
@@ -144,28 +99,22 @@ input[type="radio"] {
   margin-bottom: 32px;
   margin-top: 32px;
 }
-
 .save-preview button {
   margin: 0 5%;
 }
-
 .save-preview .preview-btn {
   font-family: cursive;
 }
-
 .save-preview .preview-btn svg {
   fill: #ffffff;
   margin-right: 2px;
 }
-
 .save-preview .preview-btn .eyes-btn svg {
   width: 25px;
 }
-
 .save-preview .valid-btn {
   font-family: cursive;
 }
-
 .save-preview .valid-btn .savecard-btn svg {
   width: 18px;
   margin-right: 4px;
@@ -174,20 +123,16 @@ input[type="radio"] {
 .icon-btn:checked ~ .icon-select {
   background: #ffffff;
 }
-
 .icon-btn:checked ~ .icon-select .icon-choose {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .color-btn:checked ~ .color-select {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 select::-ms-expand {
@@ -198,72 +143,48 @@ select::-ms-expand {
   position: fixed;
   right: 5%;
 }
-
 #navbar .switch {
   position: fixed;
 }
-
 #navbar .switch::after {
   margin-left: 6%;
 }
-
 #navbar .switch::before {
   margin-left: 6%;
 }
-
 #navbar .switch .sphere {
   width: 20px;
   height: 20px;
   margin: 2%;
 }
-
 #navbar nav a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   font-family: "secret";
   text-transform: uppercase;
   font-size: 110%;
 }
-
 #navbar nav a .icon-nav:hover {
   z-index: 2;
 }
-
 #navbar nav a span {
   display: none;
 }
 
 .valid-graph {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .activity {
   background: none;
 }
-
 .activity .button-form span {
   border: 1px solid black;
 }
-
 .activity .button-form span svg {
   width: 80px;
   fill: red;
@@ -274,19 +195,10 @@ select::-ms-expand {
 }
 
 .form-bnt {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
 .view {
@@ -299,32 +211,16 @@ select::-ms-expand {
   width: 46%;
   height: 80vh;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .graphFormAM {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
   margin-left: 2%;
 }
 
@@ -336,28 +232,17 @@ select::-ms-expand {
   position: fixed;
   right: 6.5%;
   top: 42%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 .btn span {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   border: 1px solid;
   width: 42px;
   height: 42px;
   border-radius: 50px;
 }
-
 .btn span svg {
   padding: 5px;
   width: 40px;
@@ -370,88 +255,53 @@ fieldset {
   border: 1px solid white;
   border-radius: 10px;
 }
-
 fieldset legend {
   font-size: 20px;
   margin-left: 1%;
 }
-
 fieldset span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 fieldset span input {
   background: none;
   text-align: center;
   border-radius: 5px;
 }
-
 fieldset span select {
   background: none;
   width: 120px;
 }
-
 fieldset span .valid {
   margin-top: 1%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
   padding: 1.5%;
   border-radius: 40px;
 }
-
 fieldset span .valid span {
   width: 40px;
   height: 34px;
 }
-
 fieldset span .valid span svg {
   fill: #ffffff;
 }
 
 .form-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .formadd .stop {
   margin-top: 1%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
-
 .formadd .stop button {
   text-align: center;
   border-radius: 100px;
@@ -460,112 +310,65 @@ fieldset span .valid span svg {
   font-family: "secret";
   text-shadow: 0px 0px 2px #000000;
 }
-
 .formadd .stop button:hover {
   background: none;
 }
-
 .formadd .info {
   margin-top: 1%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
 }
-
 .formadd .info .button {
   margin-left: 2%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .formadd .info .button .modifier {
   margin-top: 10px;
 }
-
 .formadd .info .button button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   width: 45px;
   height: 45px;
 }
-
 .formadd .info .button button span svg {
   width: 25px;
   height: 25px;
 }
-
 .formadd .table {
   font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .formadd .table .scroll {
   border-radius: 15px;
 }
-
 .formadd .table .scroll thead {
   display: block;
 }
-
 .formadd .table .scroll tbody {
   display: block;
   height: 14vh;
   overflow: auto;
 }
-
 .formadd .table .scroll tbody::-webkit-scrollbar {
   width: 6px;
 }
-
 .formadd .table .scroll tbody::-webkit-scrollbar-corner {
   display: none;
 }
-
 .formadd .table .scroll tbody::-webkit-scrollbar-thumb {
   width: 6px;
   border-radius: 50px;
 }
-
 .formadd .table .scroll th,
 .formadd .table .scroll td {
   width: 100px;
@@ -575,34 +378,23 @@ fieldset span .valid span svg {
 .formview .button {
   margin-top: 4%;
 }
-
 .formview .choix {
   width: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: 2%;
   border-radius: 50px;
-  -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
-
 .formview .choix span {
   margin-right: 5%;
   width: 20%;
 }
-
 .formview .choix p {
   text-transform: uppercase;
   font-size: 110%;
 }
-
 .formview .choix:hover {
   fill: #000000;
   color: #000000;
@@ -610,55 +402,41 @@ fieldset span .valid span svg {
 }
 
 .horizontal {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   font-family: cursive;
 }
 
-input[type="color"] {
+input[type=color] {
   border: 1px solid;
   width: 40px;
   height: 40px;
 }
 
 .check {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .check .checkmark {
   width: 20px;
   height: 20px;
   border: 1px solid red;
 }
-
 .check p {
   font-size: 10px;
   margin-left: 5px;
 }
-
 .check .uncheck {
   display: block;
 }
-
 .check .checked {
   display: none;
 }
-
 .check .checkbox:checked ~ .checkmark::after {
   content: "✓";
 }
-
 .check .checkbox:checked ~ .checkmark::after .uncheck {
   display: block;
 }
-
 .check .checkbox:checked ~ .checkmark::after .check {
   display: none;
 }
@@ -666,39 +444,24 @@ input[type="color"] {
 .activity-card {
   width: 140px;
   height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .activity-card .card-inside {
   border: 2px solid darkgoldenrod;
   background: #000;
   color: darkgoldenrod;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 120px;
   height: 60px;
   font-family: cursive;
 }
-
 .activity-card .card-inside .card-icon {
   margin-right: 5px;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
   width: 40px;
 }
 
@@ -715,13 +478,11 @@ input[type="color"] {
 .card-container {
   overflow: scroll;
 }
-
 .selected::-webkit-scrollbar,
 .card-container::-webkit-scrollbar {
   height: 0;
   width: 6px;
 }
-
 .selected::-webkit-scrollbar-thumb,
 .card-container::-webkit-scrollbar-thumb {
   background: white;
@@ -732,35 +493,25 @@ input[type="color"] {
   padding: 3px;
   width: 45px;
 }
-
 .icon-select .icon-choose {
   width: 45px;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
 
 .color-small {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 45px;
   width: 100px;
   background: #ffffff;
 }
-
 .color-small .color-choose {
   width: 80px;
   color: darkgoldenrod;
   background: #000;
   border: 2px solid darkgoldenrod;
-  -webkit-box-shadow: 0px 0px 0px 28px 9px silver;
-          box-shadow: 0px 0px 0px 28px 9px silver;
+  box-shadow: 0px 0px 0px 28px 9px silver;
   text-align: center;
 }
 
@@ -769,42 +520,26 @@ input[type="color"] {
   margin-bottom: 1%;
   width: 300px;
   height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .activity-Preview .activity-inside {
   border: 3px solid darkgoldenrod;
   background: #000;
   color: darkgoldenrod;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   padding: 1% 0;
   font-family: cursive;
 }
-
 .activity-Preview .activity-inside .activity-icon {
   margin-right: 5px;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
   width: 50px;
 }
-
 .activity-Preview .activity-inside .activity-title {
   font-size: 20px;
 }
@@ -815,10 +550,8 @@ input[type="color"] {
   width: 60px;
   padding: 2px;
 }
-
 .icon-inside .icon-view {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
   width: 60px;
 }
 
@@ -848,100 +581,78 @@ input[type=color] {
 body.red .fill {
   fill: #880000;
 }
-
 body.red .no-fill {
   stroke: #880000;
 }
-
 body.red .active {
   fill: #000000;
   background: #880000;
 }
-
 body.red .desactive {
   fill: #880000;
   background: none;
 }
-
 body.red .switch {
   border: 3px solid #880000;
 }
-
 body.red .switch .sphere {
   border: 2px solid #ff0000;
   background: #880000;
 }
-
 body.red .form fieldset {
   border: 1px solid #880000;
 }
-
 body.red .form fieldset legend {
   color: #880000;
   text-shadow: 0px 0px 1px #ff0000;
 }
-
 body.red .btn span {
   border: 1px solid #ff0000;
 }
-
 body.red input::-webkit-calendar-picker-indicator {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  filter: invert(100%);
 }
-
 body.red input[type=date], body.red input[type=text], body.red input[type=time], body.red select {
   border: 2px solid #880000;
 }
-
 body.red .valid {
   border: 2px solid #ff0000;
   background: #880000;
 }
-
 body.red .valid:hover {
   background: none;
 }
-
 body.red .stop button {
   border: 1px solid #ff0000;
   background: #880000;
 }
-
 body.red .info button {
   fill: #880000;
   border: 1px solid #880000;
 }
-
 body.red .info button:hover {
   fill: #000000;
   background: #880000;
   border: 1px solid #ff0000;
 }
-
 body.red .scroll tr,
 body.red .scroll th,
 body.red .scroll td {
   border: 1px solid #ff0000;
 }
-
 body.red .scroll tbody::-webkit-scrollbar {
   background-color: #880000;
 }
-
 body.red .scroll tbody::-webkit-scrollbar-thumb {
   background: #ff0000;
   border: 1px solid #500000;
 }
-
 body.red .scroll tbody tr {
   background: #500000;
 }
-
 body.red .scroll tbody tr:nth-child(even) {
   background: #880000;
 }
-
 body.red .choix {
   border: 2px solid #880000;
   fill: #880000;
@@ -949,7 +660,6 @@ body.red .choix {
   color: #880000;
   text-shadow: 0px 0px 2px #ff0000;
 }
-
 body.red .choix:hover {
   border: 2px solid #880000;
   background: #880000;
@@ -958,84 +668,66 @@ body.red .choix:hover {
 body.green .fill {
   fill: #008800;
 }
-
 body.green .no-fill {
   stroke: #008800;
 }
-
 body.green .active {
   fill: #000000;
   background: #008800;
 }
-
 body.green .desactive {
   fill: #008800;
   background: none;
 }
-
 body.green .switch {
   border: 3px solid #008800;
 }
-
 body.green .switch .sphere {
   border: 2px solid #00ff00;
   background: #008800;
 }
-
 body.green .btn span {
   fill: #008800;
   border: 1px solid #00ff00;
 }
-
 body.green .switch {
   border: 3px solid #008800;
 }
-
 body.green .switch .sphere {
   border: 2px solid #00ff00;
   background: #008800;
-  -webkit-transform: translate(30%);
-          transform: translate(30%);
+  transform: translate(30%);
 }
-
 body.green input,
 body.green select {
   border: 2px solid #008800;
 }
-
 body.green .valid {
   border: 2px solid #00ff00;
   background: #008800;
 }
-
 body.green .stop button {
   border: 1px solid #00ff00;
   background: #008800;
 }
-
 body.green .scroll tr,
 body.green .scroll th,
 body.green .scroll td {
   border: 1px solid #00ff00;
 }
-
 body.green .scroll tbody::-webkit-scrollbar {
   background-color: #008800;
 }
-
 body.green .scroll tbody::-webkit-scrollbar-thumb {
   background: #00ff00;
   border: 1px solid #005000;
 }
-
 body.green .scroll tbody tr {
   background: #005000;
 }
-
 body.green .scroll tbody tr:nth-child(even) {
   background: #008800;
 }
-
 body.green .choix {
   border: 2px solid #008800;
   fill: #008800;
@@ -1043,7 +735,6 @@ body.green .choix {
   color: #008800;
   text-shadow: 0px 0px 2px #00ff00;
 }
-
 body.green .choix:hover {
   border: 2px solid #008800;
   background: #008800;
@@ -1052,12 +743,8 @@ body.green .choix:hover {
 .switch {
   width: 78px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-family: "alien";
   font-weight: bold;
   font-size: 15px;
@@ -1070,23 +757,18 @@ body.green .choix:hover {
   top: 30%;
   width: 80px;
 }
-
 #navbar nav {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
-
 #navbar nav a {
   margin: 40% 0;
 }
-
 #navbar nav a .icon-nav {
   width: 100%;
-  -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
-
 #navbar nav a span {
   width: 80px;
   text-align: center;
@@ -1099,7 +781,6 @@ body.green .choix:hover {
   text-shadow: 0px 0px 2px #888888;
   display: none;
 }
-
 #navbar nav a .graph,
 #navbar nav a .color,
 #navbar nav a .icon {
@@ -1124,4 +805,5 @@ body.green .choix:hover {
 #icon:hover .icon {
   display: block;
 }
+
 /*# sourceMappingURL=style.css.map */
