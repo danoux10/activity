@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <?php
 		include_once '../include/headContaint.php';
-		include_once '../view/color.php';
+		include_once '../view/activity.php';
 	?>
     <title>activity</title>
   </head>
@@ -23,13 +23,7 @@
             <div class="card-containt grid grid-cols-6 gap-1 mt-3 pl-1">
               <!-- TODO activity card -->
               <!-- ! php generation -->
-              <input type="radio" class="color-btn" name="activity[]" id="activityid" />
-              <div class="activity-card color-select">
-                <label for="activityid" class="row card-inside">
-                  <img class="card-icon" src="../icon/6182620926e56.svg" alt=""/>
-                  <p class="card-title">Cours</p>
-                </label>
-            </div>
+              <?php include_once '../include/viewActivity.php'?>
           </div>
           </div>
         </fieldset>
@@ -134,7 +128,7 @@
               <legend class="secret">update Activity</legend>
               <span class="row">
                 <label for="name" class="mr-1">Nom</label>
-                <input type="text" name="nameActivity" id="name" />
+                <input type="text" name="name" id="name" />
               </span>
               <div class="row justify-around">
                 <!-- icon -->
@@ -143,18 +137,7 @@
                   <!-- ! php generation -->
                   <!-- ANCHOR icon select -->
                   <div class="grid grid-cols-5 gap-1 icon-contain pl-2">
-                    <input
-                      type="radio"
-                      class="iconSelect"
-                      name="icon"
-                      id="icon"
-                    />
-                    <label for="icon" class="icon">
-                      <img
-                        src="../icon/61826172a61f0.svg"
-                        class="icon-choose"
-                      />
-                    </label>
+                    <?php include '../include/selectIcon.php'; ?>
                   </div>
                 </fieldset>
                 <!-- color -->
@@ -162,10 +145,7 @@
                   <legend class="cursive">Color</legend>
                   <!-- ANCHOR color select -->
                   <div class="grid grid-cols-4 gap-2 color-contain pl-2">
-                    <input type="radio" class="radio" name="color" id="color" />
-                    <div class="color-small">
-                      <label for="color" class="color-choose"> Text... </label>
-                    </div>
+                    <?php include '../include/selectColor.php'; ?>
                   </div>
                 </fieldset>
               </div>
@@ -202,9 +182,9 @@
             <fieldset id="preview" class="large preview secret">
               <legend class="secret">Preview</legend>
               <div class="activity-Preview">
-                <div class="activity-inside">
-                  <img src="../icon/61826181889ee.svg" class="activity-icon" />
-                  <h3 class="activity-title">cours</h3>
+                <div class="activity-inside" style="background: <?php echo $fill?>; color: <?php echo $text ?>; border: <?php echo $border?>">
+                  <img src="<?php echo $tagChoose?>" class="activity-icon" alt=" <?php $iconName ?>" />
+                  <h3 class="activity-title"><?php echo $name;?></h3>
                 </div>
               </div>
             </fieldset>

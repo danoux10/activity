@@ -110,6 +110,8 @@ button[type=file]{
 input[type=checkbox],
 input[type=radio] {
   display: none;
+  width: 10px;
+  height: 10px;
 }
 //ANCHOR valid save & preview btn
 .save-preview {
@@ -152,9 +154,23 @@ input[type=radio] {
   }
 }
 
+.color-btn{
+  width: 10px;
+  height: 10px;
+  ~ .color-small{    
+    filter: grayscale(0%);
+  }
+  ~ .color-select{
+    filter: invert(0%);
+  }
+}
 .color-btn:checked{
   ~ .color-select{
     filter: grayscale(100%);
+  }
+  ~ .color-small{    
+    border: 1px solid lime;
+    filter: invert(100%);
   }
 }
 //graph page style
@@ -551,7 +567,6 @@ input[type="color"] {
 
 //ANCHOR preview
 .activity-Preview {
-  background: $white;
   margin-bottom: 1%;
   width: 300px;
   height: 100px;
@@ -622,12 +637,12 @@ input[type=color]{
 }
 
 .checklabel::after{
-  content: 'active';
+  content: 'desactive';
 }
 
 .checkbox:checked{
   ~ .checklabel::after{
-    content: 'desactive';
+    content: 'active';
   }
 }
 //red mode

@@ -16,15 +16,6 @@ create table color(
     fill varchar(255)
 );
 
-create  table beta(
-    idBeta int(11) primary key auto_increment not null,
-    nameColorB varchar(255) not null,
-    borderB varchar(255),
-    textB varchar(255),
-    backB varchar(255),
-    fillB varchar(255)
-);
-
 create table  cards(
     id int(11) primary key auto_increment not null,
     iconCard int(11) not null,

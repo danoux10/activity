@@ -9,9 +9,10 @@
 				echo 'erreur de téléchargement';
 			}else{
 				$name=htmlspecialchars($_POST['iconName']);
+				$filename = uniqid();
 				$info=pathinfo($_FILES['iconAdd']['name']);
-				$src = '../icon/'.$name.'.'.$info['extension'];
-				move_uploaded_file($_FILES['iconAdd']['tmp_name'],'../icon/'.$name.'.'.$info['extension']);
+				$src = '../icon/'.$filename.'.'.$info['extension'];
+				move_uploaded_file($_FILES['iconAdd']['tmp_name'],'../icon/'.$filename.'.'.$info['extension']);
 				$addIcon = $bdd->prepare('insert into icon set tag=?, iconName=?');
 				$addIcon->execute([$src,$name]);
 			}

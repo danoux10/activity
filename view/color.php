@@ -17,23 +17,22 @@
 @ $fill = $_POST['fill'];
 @ $borderValue = $_POST['border'];
 @ $text = $_POST['text'];
-
 if (isset($preview)){
 	$text;
-	if (!isset($activeBack)){
+	if (isset($activeBack)){
 		$back;
 		$check ='checked';
 	}else{
 		$back = 'none';
 	}
-	if (!isset($activeBorder)){
+	if (isset($activeBorder)){
 		$border = '3px solid'.$borderValue;
 		$check ='checked';
 	}else{
 		$border = 'none';
 		$borderValue = 'none';
 	}
-	if (!isset($activeFill)){
+	if (isset($activeFill)){
 		$fill;
 		$check ='checked';
 	}else{
@@ -45,23 +44,27 @@ if (isset($preview)){
 	$borderValue = '#b8860b';
 	$border = '3px solid '.$borderValue;
 	$text = '#ffffff';
+	$check = 'checked';
 }
 
 if(isset($add)){
-	$text;
+	$text = $_POST['text'];
 	if (isset($activeBack)){
-		$back;
+		$back = $_POST['back'];
+		echo $back;
 	}else{
 		$back = 'none';
 	}
 	if (isset($activeBorder)){
+		$borderValue = $_POST['border'];
 		$border = '3px solid'.$borderValue;
 	}else{
 		$border = 'none';
 		$borderValue = 'none';
 	}
 	if (isset($activeFill)){
-		$fill;
+		$fill = $_POST['fill'];
+		echo $fill;
 	}else{
 		$fill ='none';
 	}

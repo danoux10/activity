@@ -3,10 +3,13 @@
 	foreach ($selectIcon as $data){
 		$idIcon = $data['idIcon'];
 		$tag = $data['tag'];
-		$name = $data['iconName'];
+		$nameIcon = $data['iconName'];
+		$valueIcon = 'icon'.$idIcon;
 		
-	echo "<input type='radio' class='icon-btn' name='iconSelect[]' id='$idIcon'/>";
-	echo "<label for='$idIcon' class='icon-select'>";
-		echo "<img src='$tag' class='icon-choose' alt='$name'/>";
-	echo "</label>";
+	echo "<span>";
+		echo "<input type='radio' class='icon-btn' name='iconSelect' value='$idIcon' id='$valueIcon'/>";
+		echo "<label for='$valueIcon' class='icon-select'>";
+			echo "<img src='$tag' class='icon-choose' alt='$nameIcon'/>";
+		echo "</label>";
+	echo "</span>";
 }

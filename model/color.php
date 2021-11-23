@@ -91,12 +91,6 @@
                             <label for="checkborder" class="checklabel"></label>
                         </span>
                         <span class="row items-center justify-around">
-                            <label for="shadow">Shadow</label>
-                            <input value="<?php echo $shadowValue; ?>" type="color" name="shadow" id="shadow">
-                            <input type="checkbox" name="activeShadow" class="checkbox" id="checkshadow" <?php echo @ $check ?>>
-                            <label for="checkshadow" class="checklabel"></label>
-                        </span>
-                        <span class="row items-center justify-around">
                             <label for="textColor">Text Color</label>
                             <input value="<?php echo $text; ?>" type="color" name="text" id="textColor">
                         </span>
@@ -145,10 +139,6 @@
                         <span class="row items-center justify-around">
                             <label for="border-update">Border</label>
                             <input type="color" name="borderUpdate" id="border-update">
-                        </span>
-                        <span class="row items-center justify-around">
-                            <label for="shadow-update">Shadow</label>
-                            <input type="color" name="shadowUpdate" id="shadow-update">
                         </span>
                         <span class="row items-center justify-around">
                             <label for="textColor-update">Text Color</label>
