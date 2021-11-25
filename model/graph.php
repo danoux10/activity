@@ -86,7 +86,7 @@
                 </span>
                 <span>
                   <label for="hoursEnd">Heure fin</label>
-                  <input type="time" name="hoursEndA" id="hoursEnd" />
+                  <input type="time" name="hoursEndA" id="hoursEnd" min="<?php echo $minHours?>" />
                 </span>
                 <span>
                   <label for="duration">durée</label>

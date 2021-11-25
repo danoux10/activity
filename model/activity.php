@@ -144,7 +144,7 @@
                 <fieldset class="selected">
                   <legend class="cursive">Color</legend>
                   <!-- ANCHOR color select -->
-                  <div class="grid grid-cols-4 gap-2 color-contain pl-2">
+                  <div class="grid grid-cols-4 gap-2 color-contain pl-2 scroll">
                     <?php include '../include/selectColor.php'; ?>
                   </div>
                 </fieldset>
