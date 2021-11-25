@@ -8,10 +8,14 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>graphique</title>
-    <link rel="stylesheet" href="../css/tailwind.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <?php
+      include '../include/headContaint.php';
+      include '../view/graph.php';
+    ?>
   </head>
   <body class="red graph">
+  <?php include '../include/navbar.html';?>
+  
     <div class="view content">
       <!--LINK graphique genreration -->
     </div>
@@ -69,6 +73,7 @@
                   <label for="activity">Activiter</label>
                   <select name="activityAdd" id="activity">
                     <option value="0">Activiter</option>
+                    <?php include '../include/selectActivity.php';?>
                   </select>
                 </span>
                 <span>
@@ -155,7 +160,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <?php include_once '../include/simpletable.php'?> -->
+                      <?php include_once '../include/tableToday.php';?>
                     </tbody>
                   </table>
                 </div>
@@ -174,6 +179,7 @@
                   <label for="activityUpdate">Activiter</label>
                   <select type="date" name="activityEdit" id="activityUpdate">
                     <option value="0">Activiter</option>
+                    <?php include '../include/selectActivity.php';?>
                   </select>
                 </span>
                 <span>
@@ -215,6 +221,7 @@
                   <label for="activityV">Activiter</label>
                   <select name="activityView" id="activityV">
                     <option value="0">Activiter</option>
+                    <?php include '../include/selectActivity.php';?>
                   </select>
                 </span>
                 <span>
@@ -334,6 +341,6 @@
         </div>
       </form>
     </div>
-    <script src="../js/toggleView.js"></script>
+    <?php include '../include/footer.html'?>
   </body>
 </html>

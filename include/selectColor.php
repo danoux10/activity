@@ -9,7 +9,7 @@
 		$valueColor = 'color'.$idColorSelect;
 		
 		echo "<span>";
-			echo "<input type='radio' class='color-btn' name='colorSelect' value='$idColorSelect' id='$valueColor' />";
+			echo "<input type='radio' class='hidden color-btn' name='colorSelect' value='$idColorSelect' id='$valueColor' />";
 			echo "<label for='$valueColor' class='color-small' style='background: $backSelect; color:$textSelect; border: $borderSelect'>";
 				echo "<p class='color-choose'>Text... </p>";
 			echo "</label>";

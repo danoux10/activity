@@ -5,5 +5,6 @@ foreach ($selectActivity as $dataSelect){
 	$fill = $dataSelect['fill'];
 	$color = $dataSelect['text'];
 	$name = $dataSelect['nameCard'];
+	echo "<option value='$id' style='color: $color;background: $fill'>".$name."</option>";
 }
  

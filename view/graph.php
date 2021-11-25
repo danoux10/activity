@@ -1,6 +1,4 @@
 <?php
-	include '../config/bdd.php';
-	include_once '../model/graphique.php';
 	//btn add
 	@ $add = $_POST['add'];
 	//btn modify
@@ -10,29 +8,23 @@
 	@ $table = $_POST['table'];
 	@ $save = $_POST['save'];
 	@ $actualise = $_POST['refresh'];
-
-	if (isset($actualise)){
-		header("Refresh:0");
-	}
+	
 	//ajouter
 	if(isset($add)){
 		$jourA = $_POST['dateAdd'];
+		$activityChoose = $_POST['activityAdd'];
+		$info = htmlspecialchars($_POST['description']);
 		$S=$_POST['hoursStartA'];
 		$E=$_POST['hoursEndA'];
-		$debut = strtotime($_POST['hoursStartA']);
-		$fin = strtotime($_POST['hoursEndA']);
-		$activAdd = $_POST['activityAdd'];
-		$info = htmlspecialchars($_POST['description']);
+		$start = strtotime($_POST['hoursStartA']);
+		$end = strtotime($_POST['hoursEndA']);
 		if (!empty($_POST['duration'])){
 			$duration = $_POST['duration'];
-			echo $S.'<br>'.$E.'<br>'.$duration;
 		}else{
-			$duration = date("H:i",$debut-$fin);
-			echo $S.'<br>'.$E.'<br>'.$duration;
+			$duration = date("H:i",$end-$start);
 		}
 		$req = $bdd -> prepare("INSERT INTO graph set jours=?, debut = ?, fin = ?, difference = ?, card=?, info=?, ajoutday=?");
-		$req -> execute([$jourA,$S,$E,$duration,$activAdd,$info,$dayTime,]);
-		header("Refresh:0");
+		$req -> execute([$jourA,$S,$E,$duration,$activityChoose,$info,$dayTime,]);
 	}
 
 	if(isset($view)){
