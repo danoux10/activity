@@ -33,7 +33,25 @@
 	}
 
 	if(isset($view)){
-
+		$firstDate = $_POST['dateStart'];
+		$lastDate = $_POST['dateEnd'];
+		$actv = $_POST['activityView'];
+		$hours = $_POST['hoursStartV'];
+		$duration = $_POST['durationV'];
+	}else{
+		//new
+		
+		$SelectView = $bdd->query('select * from graph where jours= "'.$today.'"');
+		$View = array();
+		foreach ($SelectView as $dataTable){
+			$view[] = $dataTable;
+			$id = $dataTable['jours'];
+			echo $id.'<br>';
+		}
+//		$_SESSION['graph']=$data;
+//		foreach ($_SESSION['graph'] as $value){
+//			echo $value['info'];
+//		}
 	}
 
 	if(isset($table)){

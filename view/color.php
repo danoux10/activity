@@ -51,7 +51,6 @@ if(isset($add)){
 	$text = $_POST['text'];
 	if (isset($activeBack)){
 		$back = $_POST['back'];
-		echo $back;
 	}else{
 		$back = 'none';
 	}
@@ -64,13 +63,10 @@ if(isset($add)){
 	}
 	if (isset($activeFill)){
 		$fill = $_POST['fill'];
-		echo $fill;
 	}else{
 		$fill ='none';
 	}
 	$addColor= $bdd->prepare('insert into color set back=?, fill=?, border=?, text=?');
 	$addColor->execute([$back,$fill,$border,$color]);
 }
-
-
 ?>

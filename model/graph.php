@@ -229,8 +229,8 @@
                   <input type="time" name="hoursStartV" id="hoursStartV" />
                 </span>
                 <span>
-                  <label for="hoursEndV">Heure fin</label>
-                  <input type="time" name="hoursEndV" id="hoursEndV" />
+                  <label for="hoursEndV">Durée</label>
+                  <input type="time" name="durationV" id="hoursEndV" />
                 </span>
 
                 <span>
