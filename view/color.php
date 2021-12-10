@@ -1,47 +1,72 @@
 
 <?php
-include	'../config/bdd.php';
-include '../model/color.php';
-
+//btn
 @ $add = $_POST['add'];
 @ $modify = $_POST['modif'];
-@ $preview = $_POST['preview'];
+@ $preview = $_POST['preview-btn'];
 @ $color = $_POST['text'];
 @ $view = $_POST['view'];
 
+//checkbox
+@ $activeBack = $_POST['activeBack'];
+@ $activeFill = $_POST['activeFill'];
+@ $activeBorder = $_POST['activeBorder'];
 
+//input
+@ $back = $_POST['back'];
+@ $fill = $_POST['fill'];
+@ $borderValue = $_POST['border'];
+@ $text = $_POST['text'];
 if (isset($preview)){
-	echo 'back '.$back.'<br> fill '.$fill.'<br> border '.$borderInput.'<br> shadow '.$glow.'<br> color '.$color;
-	echo "<div class='preview-color'>";
-		echo "<div class='bg-preview' style='background: $back'>";
-			echo "<div class='forme-preview' style='background: $fill, border: $border', box-shadow: $shadow>";
-				echo "<p style='color: $color'>text...</p>";
-			echo "</div>";
-		echo "</div>";
-	echo "</div>";
-}
-if(isset($add)){
-	$addColor= $bdd->prepare('insert into color set back=?, fill=?, border=?, glow=?, text=?');
-	$addColor->execute([$back,$fill,$border,$shadow,$color]);
-}
-
-if (isset($view)){
-	$viewColor = $bdd->query('select * from color');
-	foreach ($viewColor as $data) {
-		$id = $data['idColor'];
-		$back = "background: ".$data['back'];
-		$fill = "background: ".$data['fill'];
-		$shadow = "box-shadow: ".$data['glow'];
-		$border = "border:".$data['border'];
-		$text = $data['text'];
-		echo $id.'<br>'.$back.'<br>'.$text;
-		echo "<div class='bg-view' style='$back'>";
-			echo "<div style='$shadow,$border,$fill'>";
-				echo "<p style='color:$text'>text</p";
-			echo  "</div>";
-		echo "</div>";
-		
+	$text;
+	if (isset($activeBack)){
+		$back;
+		$check ='checked';
+	}else{
+		$back = 'none';
 	}
+	if (isset($activeBorder)){
+		$border = '3px solid'.$borderValue;
+		$check ='checked';
+	}else{
+		$border = 'none';
+		$borderValue = 'none';
+	}
+	if (isset($activeFill)){
+		$fill;
+		$check ='checked';
+	}else{
+		$fill ='none';
+	}
+}else{
+	$back = '#888888';
+	$fill = '#000000';
+	$borderValue = '#b8860b';
+	$border = '3px solid '.$borderValue;
+	$text = '#ffffff';
+	$check = 'checked';
 }
 
+if(isset($add)){
+	$text = $_POST['text'];
+	if (isset($activeBack)){
+		$back = $_POST['back'];
+	}else{
+		$back = 'none';
+	}
+	if (isset($activeBorder)){
+		$borderValue = $_POST['border'];
+		$border = '3px solid'.$borderValue;
+	}else{
+		$border = 'none';
+		$borderValue = 'none';
+	}
+	if (isset($activeFill)){
+		$fill = $_POST['fill'];
+	}else{
+		$fill ='none';
+	}
+	$addColor= $bdd->prepare('insert into color set back=?, fill=?, border=?, text=?');
+	$addColor->execute([$back,$fill,$border,$color]);
+}
 ?>

@@ -1,5 +1,5 @@
 create database activityBeta;
-use activityBeta;
+use activity;
 
 create table icon(
     idIcon int(11) primary key auto_increment not null,
@@ -9,37 +9,37 @@ create table icon(
 
 create table color(
     idColor int(11) primary key auto_increment not null,
-    nameColor varchar(255) not null,
     border varchar(255),
-    text varchar(255),
+    text varchar(255) not null,
     back varchar(255),
     fill varchar(255)
 );
 
-create  table beta(
-    idBeta int(11) primary key auto_increment not null,
-    nameColorB varchar(255) not null,
-    borderB varchar(255),
-    textB varchar(255),
-    backB varchar(255),
-    fillB varchar(255)
+create table cards(
+    idCard int(11) primary key auto_increment not null,
+    iconId int,
+    colorId int,
+    nameCard varchar(255) not null,
+    foreign key (iconId) references icon(idIcon),
+    foreign key (colorId) references color(idColor)
 );
 
-create table  cards(
-    id int(11) primary key auto_increment not null,
-    iconCard int(11) not null,
-    style int(11) not null ,
-    nameCard varchar(255) not null
-);
-
-use activityBeta;
-create table graph(
-    idGraph int(11) primary key auto_increment not null,
-    jours date not null,
+create table data_graph(
+    idDataG int primary key auto_increment not null,
+    jours date,
     debut time,
     fin time,
-    difference time,
-    card int(11) not null,
-    info text not null,
-    ajoutday varchar(255) not null
-)
+    duration time,
+    card int(11),
+    info varchar(255),
+    ajout varchar(255),
+    foreign key (card) references cards(idCard)
+);
+
+use test;
+select *, min(name) from mytable group by id order by numberrange asc;
+
+use activityBeta;
+select * from graph where card =1;
+
+
