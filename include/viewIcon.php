@@ -3,7 +3,7 @@ $viewIcon = $bdd->query('select * from icon');
 foreach ($viewIcon as $data){
 	$idIcon = $data['idIcon'];
 	$tag = $data['tag'];
-	$name = $data['iconName'];
+	$name = $data['nameIcon'];
 	
 	echo "<input type='radio' class='card' name='icon[]' id='$idIcon' />";
 		echo "<label for='$idIcon' class='row icon-inside'>";

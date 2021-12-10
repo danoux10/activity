@@ -76,7 +76,7 @@
                             </span>
                             <span class="row mt-2">
                                 <label for="iconName" class="mr-1">Name</label>
-                                <input type="text" id="iconName" name="iconName" require>
+                                <input type="text" id="iconName" name="iconName" require autocomplete="off">
                             </span>
                         </div>
                         <button type="submit" name="add" class="valid-btn">

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <?php
 	include_once '../config/bdd.php';
-    session_start();
+  session_start();
 	date_default_timezone_set('UTC');
 	$today = date("Y-m-d");
 	$years = substr($today, 0, 4);

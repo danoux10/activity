@@ -1,11 +1,11 @@
 <?php
-	$tableDay = $bdd->query('select * from graph where ajoutday = '. $dayTime .'');
+	$tableDay = $bdd->query('select * from data_graph where ajout = '. $dayTime .'');
 	foreach ($tableDay as $dataDay){
 		$date = $dataDay['jours'];
 		$activiter = $dataDay['card'];
 		$info = $dataDay['info'];
-		$duree = $dataDay['difference'];
-		$selectId = $dataDay['idGraph'];
+		$duree = $dataDay['duration'];
+		$selectId = $dataDay['idDataG'];
 		$years = substr($date,1,2);
 		$month = substr($date, 5,2);
 		$day = substr($date, 8,2);

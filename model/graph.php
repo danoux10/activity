@@ -16,7 +16,7 @@
   <body class="red graph">
   <?php include '../include/navbar.html';?>
   
-    <div class="view content">
+    <div class="view content hidden">
       <!--LINK graphique genreration -->
     </div>
 

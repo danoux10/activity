@@ -3,7 +3,7 @@
 	foreach ($selectIcon as $data){
 		$idIcon = $data['idIcon'];
 		$tag = $data['tag'];
-		$nameIcon = $data['iconName'];
+		$nameIcon = $data['nameIcon'];
 		$valueIcon = 'icon'.$idIcon;
 		
 	echo "<span>";

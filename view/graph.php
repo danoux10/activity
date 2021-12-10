@@ -23,35 +23,50 @@
 		$end = strtotime($_POST['hoursEndA']);
 		if (!empty($_POST['duration'])){
 			$duration = $_POST['duration'];
-			$S=null;
+			$S=date('H:i');
 			$E=null;
 		}else{
 			$duration = date("H:i",$end-$start);
 		}
-		$req = $bdd -> prepare("INSERT INTO graph set jours=?, debut = ?, fin = ?, difference = ?, card=?, info=?, ajoutday=?");
-		$req -> execute([$jourA,$S,$E,$duration,$activityChoose,$info,$dayTime,]);
+		echo $jourA.'<br>'.$S.'<br>'.$E.'<br>'.$duration.'<br>'.$activityChoose.'<br>'.$info.'<br>'.$dayTime;
+		$req = $bdd ->prepare('insert into data_graph set jours=?, debut=?, fin=?,duration=?,card=?,info=?,ajout=?');
+		$req -> execute([$jourA,$S,$E,$duration,$activityChoose,$info,$dayTime]);
 	}
 
+	//LINK selection view
 	if(isset($view)){
 		$firstDate = $_POST['dateStart'];
 		$lastDate = $_POST['dateEnd'];
 		$actv = $_POST['activityView'];
 		$hours = $_POST['hoursStartV'];
 		$duration = $_POST['durationV'];
-	}else{
-		//new
 		
-		$SelectView = $bdd->query('select * from graph where jours= "'.$today.'"');
+		if(empty($firstDate)){
+			$StartSelect = $today;
+		}else{
+			$StartSelect = $_POST['dateStart'];
+		}
+		if($actv == 0){
+			$SelectView = $bdd->query("select * from data_graph where jours='$StartSelect'");
+		}else{
+			$actvSelect = $_POST['activityView'];
+			$SelectView = $bdd->query("select * from data_graph where jours='$StartSelect' AND card ='$actvSelect'");
+		}
+		foreach ($SelectView as $dataTable){
+			$id = $dataTable['idDataG'];
+			$card = $dataTable['card'];
+			echo $id.'/--/'.$card.'<br>';
+		}
+	}else{
+		$SelectView = $bdd->query('select * from data_graph where jours= "'.$today.'"');
 		$View = array();
 		foreach ($SelectView as $dataTable){
 			$view[] = $dataTable;
-			$id = $dataTable['jours'];
-			echo $id.'<br>';
 		}
-//		$_SESSION['graph']=$data;
-//		foreach ($_SESSION['graph'] as $value){
-//			echo $value['info'];
-//		}
+		$_SESSION['graph']=$view;
+		foreach ($_SESSION['graph'] as $value){
+			echo $value['info'];
+		}
 	}
 
 	if(isset($table)){

@@ -30,6 +30,6 @@
 		$icon = $_POST['iconSelect'];
 		$color = $_POST['colorSelect'];
 		$name = htmlspecialchars($_POST['nameActivity']);
-		$activity = $bdd->prepare('insert into cards set iconCard=?, style=?, nameCard=?');
+		$activity = $bdd->prepare('insert into cards set iconId=?, colorId=?, nameCard=?');
 		$activity ->execute([$icon,$color,$name]);
 	}

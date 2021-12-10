@@ -161,6 +161,7 @@
                       />
                     </svg>
                   </span>
+                  <!-- -->
                   <p class="btn-text">preview</p>
                 </button>
                 <button type="submit" name="add" class="valid-btn">
