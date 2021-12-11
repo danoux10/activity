@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8936dd7f-03a5-4cad-a5df-6d43a498c1f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/color.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/color.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/graph.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/graph.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phptest/activity.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phptest/beta.php" beforeDir="false" afterPath="$PROJECT_DIR$/js/noreload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phptest/color.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phptest/graphique.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phptest/icon.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +21,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,6 +41,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -36,10 +58,24 @@
       <option name="presentableId" value="Default" />
       <updated>1639214083932</updated>
       <workItem from="1639214087764" duration="550000" />
+      <workItem from="1639214869631" duration="1076000" />
+      <workItem from="1639224104903" duration="931000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

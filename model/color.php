@@ -188,6 +188,7 @@
           </div>
       </form>
   </div>
+<script src="../js/noreload.js"></script>
 <?php include_once '../include/footer.html'?>
 </body>
 </html>
