@@ -211,7 +211,7 @@
               <div class="grid grid-cols-3 gap-3 activitybt">
                 <span>
                   <label for="dateStart">Date Start</label>
-                  <input type="date" name="dateStart" id="dateStart" />
+                  <input type="date" name="dateStart" id="dateStart" value="<?php echo $today ?>" />
                 </span>
                 <span>
                   <label for="dateEnd">Date End</label>
