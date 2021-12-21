@@ -179,7 +179,7 @@
                 <fieldset id="preview" class="large preview">
                     <legend class="secret">Preview</legend>
                     <div class="activity-Preview" style="background: <?php echo $back ?>;">
-                        <div class="activity-inside" style="color: <?php echo $text?>;background:<?php echo $fill ?>;border:<?php echo $border?>;box-shadow: <?php echo $shadow?> ">
+                        <div class="activity-inside" style="color: <?php echo $text?>;background:<?php echo $fill ?>;border:<?php echo $border?>">
                             <h3 class="activity-title">text...</h3>
                         </div>
                     </div>

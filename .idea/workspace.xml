@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8936dd7f-03a5-4cad-a5df-6d43a498c1f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/icon/61b4a82531669.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/gama.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/include/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/headContaint.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/headContaint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/color.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/graph.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/graph.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/graph.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/graph.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/test.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -54,7 +67,30 @@
       <workItem from="1639214087764" duration="550000" />
       <workItem from="1639214869631" duration="1076000" />
       <workItem from="1639224104903" duration="931000" />
-      <workItem from="1639228461233" duration="716000" />
+      <workItem from="1639228461233" duration="3415000" />
+      <workItem from="1639297159288" duration="5335000" />
+      <workItem from="1639380626950" duration="5620000" />
+      <workItem from="1639466668754" duration="18755000" />
+      <workItem from="1639577067082" duration="1628000" />
+      <workItem from="1639598567406" duration="1632000" />
+      <workItem from="1639633189586" duration="306000" />
+      <workItem from="1639638638009" duration="594000" />
+      <workItem from="1639658787691" duration="1652000" />
+      <workItem from="1639670246943" duration="1817000" />
+      <workItem from="1639673681383" duration="391000" />
+      <workItem from="1639681408994" duration="3920000" />
+      <workItem from="1639731570890" duration="1116000" />
+      <workItem from="1639737500679" duration="10909000" />
+      <workItem from="1639760155487" duration="1097000" />
+      <workItem from="1639771682289" duration="707000" />
+      <workItem from="1639818219034" duration="5800000" />
+      <workItem from="1639835600111" duration="614000" />
+      <workItem from="1639894027215" duration="594000" />
+      <workItem from="1639911210689" duration="12746000" />
+      <workItem from="1639943577179" duration="2672000" />
+      <workItem from="1639988828873" duration="4769000" />
+      <workItem from="1640033817099" duration="1903000" />
+      <workItem from="1640067743526" duration="594000" />
     </task>
     <servers />
   </component>

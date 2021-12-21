@@ -67,7 +67,7 @@
               <div class="grid grid-cols-3 gap-3 activitybt">
                 <span>
                   <label for="date">Date</label>
-                  <input type="date" name="dateAdd" id="date" />
+                  <input type="date" name="dateAdd" id="date" max="<?php echo $today ?>"/>
                 </span>
                 <span>
                   <label for="activity">Activiter</label>
@@ -167,7 +167,7 @@
               </div>
             </fieldset>
             <!--LINK modifier -->
-            <fieldset id="update" class="large formadd ">
+            <fieldset id="update" class="large formadd hidden">
               <legend class="secret">modify activity</legend>
               <!-- input -->
               <div class="grid grid-cols-3 gap-0 activitybt">
@@ -211,11 +211,11 @@
               <div class="grid grid-cols-3 gap-3 activitybt">
                 <span>
                   <label for="dateStart">Date Start</label>
-                  <input type="date" name="dateStart" id="dateStart" value="<?php echo $today ?>" />
+                  <input type="date" name="dateStart" id="dateStart" value="<?php echo $_SESSION['dayStart']; ?>" max="<?php echo $today; ?>" />
                 </span>
                 <span>
                   <label for="dateEnd">Date End</label>
-                  <input type="datE" id="dateEnd" name="dateEnd" />
+                  <input type="datE" id="dateEnd" name="dateEnd" value="<?php echo $_SESSION['dayEnd']; ?>" min="<?php echo $_SESSION['tomorrow']?>" max="<?php echo $today; ?>" />
                 </span>
                 <span>
                   <label for="activityV">Activiter</label>
@@ -226,11 +226,11 @@
                 </span>
                 <span>
                   <label for="hoursStartV">Heure début</label>
-                  <input type="time" name="hoursStartV" id="hoursStartV" />
+                  <input type="time" name="hoursStartV" id="hoursStartV" value="<?php echo $_SESSION['hours']; ?>" />
                 </span>
                 <span>
                   <label for="hoursEndV">Durée</label>
-                  <input type="time" name="durationV" id="hoursEndV" />
+                  <input type="time" name="durationV" id="hoursEndV" value="<?php echo $_SESSION['duration']; ?>"/>
                 </span>
 
                 <span>

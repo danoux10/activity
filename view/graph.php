@@ -8,9 +8,15 @@
 	@ $table = $_POST['table'];
 	@ $save = $_POST['save'];
 	@ $actualise = $_POST['refresh'];
+	
+	$_SESSION['dayStart']=date('Y-m-d');
+	unset($_SESSION['dayEnd']);
+	unset($_SESSION['duration']);
+	unset($_SESSION['hours']);
+
 	//ajouter
 	if(isset($add)){
-		$jourA = $_POST['dateAdd'];
+		$jourA =strtotime( $_POST['dateAdd']);
 		$activityChoose = $_POST['activityAdd'];
 		$info = htmlspecialchars($_POST['description']);
 		if(!empty($_POST['hoursStartA'])){
@@ -34,41 +40,100 @@
 	}
 
 	//LINK selection view
-	if(isset($view)){
+	if(isset($view)) {
 		$firstDate = $_POST['dateStart'];
 		$lastDate = $_POST['dateEnd'];
 		$actv = $_POST['activityView'];
 		$hours = $_POST['hoursStartV'];
 		$duration = $_POST['durationV'];
 		
-		if(empty($firstDate)){
-			$StartSelect = $today;
-		}else{
-			$StartSelect = $_POST['dateStart'];
+		//ANCHOR error mesage hours/duration
+		if (!empty($hours) && !empty($duration)) {
+			echo 'error hours and duration ne peuvent pas être entré en même temps';
 		}
-		if($actv == 0){
-			$SelectView = $bdd->query("select * from data_graph where jours='$StartSelect'");
-		}else{
-			$actvSelect = $_POST['activityView'];
-			$SelectView = $bdd->query("select * from data_graph where jours='$StartSelect' AND card ='$actvSelect'");
+		
+		//ANCHOR selection start && empty end
+		if (!empty($firstDate) && empty($lastDate)) {
+			$lastDate = $today;
+			$_SESSION['dayStart'] = $firstDate;
+			$_SESSION['dayEnd']= $lastDate;
+			//select activity
+			if ($actv == 0){
+				//set hours
+				if (!empty($hours)){
+					$_SESSION['hours'] = $hours;
+					unset($_SESSION['duration']);
+					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours'");
+					
+				}
+				//set duration
+				if (!empty($duration)){
+					$_SESSION['duration']= $duration;
+					unset($_SESSION['hours']);
+					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration'");
+
+				}
+			}else{
+				//set hours
+				if (!empty($hours)){
+					$_SESSION['hours']= $hours;
+					unset($_SESSION['duration']);
+					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours' AND card='$actv'");
+
+				}
+				//set duration
+				if (!empty($duration)){
+					$_SESSION['duration']= $duration;
+					unset($_SESSION['hours']);
+					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration' AND card='$actv'");
+
+				}
+			}
 		}
-		foreach ($SelectView as $dataTable){
-			$id = $dataTable['idDataG'];
-			$card = $dataTable['card'];
-			echo $id.'/--/'.$card.'<br>';
-		}
-	}else{
-		$SelectView = $bdd->query('select * from data_graph where jours= "'.$today.'"');
-		$View = array();
-		foreach ($SelectView as $dataTable){
-			$view[] = $dataTable;
-		}
-		$_SESSION['graph']=$view;
-		foreach ($_SESSION['graph'] as $value){
-			echo $value['info'];
+		//ANCHOR else selection
+		else {
+			//verify start >= end
+			if($lastDate >= $firstDate){
+				$_SESSION['dayStart'] = $firstDate;
+				$_SESSION['dayEnd'] = $lastDate;
+				if ($actv == 0){
+					//set hours
+					echo $actv.'<br>';
+					if (!empty($hours)){
+						$_SESSION['hours']= $hours;
+						unset($_SESSION['duration']);
+						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours'");
+
+					}
+					//set duration
+					if (!empty($duration)){
+						$_SESSION['duration']= $duration;
+						unset($_SESSION['hours']);
+						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration'");
+	
+					}
+				}else{
+					//set hours
+					if (!empty($hours)){
+						$_SESSION['hours']= $hours;
+						unset($_SESSION['duration']);
+						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours' AND card='$actv'");
+
+					}
+					//set duration
+					if (!empty($duration)){
+						$_SESSION['duration']= $duration;
+						unset($_SESSION['hours']);
+						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration' AND card='$actv'");
+	
+					}
+				}
+			}
+			else{
+				echo 'la dateFin >= de dateDebut';
+			}
 		}
 	}
-
 	if(isset($table)){
 
 	}

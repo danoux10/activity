@@ -8,7 +8,7 @@
 		foreach ($icon as $dataIcon){
 			$idIcon = $dataIcon['idIcon'];
 			$tagChoose = $dataIcon['tag'];
-			$iconName = $dataIcon['iconName'];
+			$iconName = $dataIcon['nameIcon'];
 		}
 		$colorSelect = $_POST['colorSelect'];
 		$color = $bdd->query('select * from color where idColor ='.$colorSelect.'');

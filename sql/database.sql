@@ -39,7 +39,7 @@ create table data_graph(
 use test;
 select *, min(name) from mytable group by id order by numberrange asc;
 
-use activityBeta;
-select * from graph where card =1;
-
+use activity;
+select min(jours) from data_graph;
+select jours from data_graph ;
 
