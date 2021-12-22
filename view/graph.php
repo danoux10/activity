@@ -16,7 +16,7 @@
 
 	//ajouter
 	if(isset($add)){
-		$jourA =strtotime( $_POST['dateAdd']);
+		$jourA =$_POST['dateAdd'];
 		$activityChoose = $_POST['activityAdd'];
 		$info = htmlspecialchars($_POST['description']);
 		if(!empty($_POST['hoursStartA'])){
@@ -29,14 +29,16 @@
 		$end = strtotime($_POST['hoursEndA']);
 		if (!empty($_POST['duration'])){
 			$duration = $_POST['duration'];
+			$dura = date("Hi",strtotime($_POST['duration']));
 			$S=date('H:i');
 			$E=null;
 		}else{
 			$duration = date("H:i",$end-$start);
+			$dura = date("Hi",$end-$start);
 		}
 		echo $jourA.'<br>'.$S.'<br>'.$E.'<br>'.$duration.'<br>'.$activityChoose.'<br>'.$info.'<br>'.$dayTime;
-		$req = $bdd ->prepare('insert into data_graph set jours=?, debut=?, fin=?,duration=?,card=?,info=?,ajout=?');
-		$req -> execute([$jourA,$S,$E,$duration,$activityChoose,$info,$dayTime]);
+		$req = $bdd ->prepare('insert into data_graph set jours=?, debut=?,fin=?,duration=?,durationNum=?,card=?,info=?,ajout=?');
+		$req -> execute([$jourA,$S,$E,$duration,$dura,$activityChoose,$info,$dayTime]);
 	}
 
 	//LINK selection view

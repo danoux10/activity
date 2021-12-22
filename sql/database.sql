@@ -30,11 +30,26 @@ create table data_graph(
     debut time,
     fin time,
     duration time,
+    durationNum int(255),
     card int(11),
     info varchar(255),
     ajout varchar(255),
     foreign key (card) references cards(idCard)
 );
+
+create table data_graphbis(
+    idDataG int primary key auto_increment not null,
+    jours date,
+    debut time,
+    fin time,
+    duration time,
+    durationNum int(255),
+    card int(11),
+    info varchar(255),
+    ajout varchar(255),
+    foreign key (card) references cards(idCard)
+);
+
 
 use test;
 select *, min(name) from mytable group by id order by numberrange asc;

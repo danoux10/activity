@@ -1,5 +1,5 @@
 <?php
-$dayadd = $bdd->query('select * from graph where ajoutday = '.$dayTime.'');
+$dayadd = $bdd->query('select * from data_graphbis where ajoutday = '.$dayTime.'');
 
 foreach ($dayadd as $data){
 	$id = $data['idGraph'];
