@@ -16,8 +16,11 @@
   <body class="red graph">
   <?php include '../include/navbar.html';?>
   
-    <div class="view content hidden">
+    <div class="view content border border-red-900">
       <!--LINK graphique genreration -->
+      <div id="tableView" class="hidden">
+          <?php include '../include/tableSelect.php';?>
+      </div>
     </div>
 
     <div class="form content">
@@ -215,7 +218,7 @@
                 </span>
                 <span>
                   <label for="dateEnd">Date End</label>
-                  <input type="datE" id="dateEnd" name="dateEnd" value="<?php echo $_SESSION['dayEnd']; ?>" min="<?php echo $_SESSION['tomorrow']?>" max="<?php echo $today; ?>" />
+                  <input type="datE" id="dateEnd" name="dateEnd" value="<?php echo $_SESSION['dayEnd']; ?>" max="<?php echo $today; ?>" />
                 </span>
                 <span>
                   <label for="activityV">Activiter</label>

@@ -58,3 +58,4 @@ use activity;
 select min(jours) from data_graph;
 select jours from data_graph ;
 
+select * from data_graph where idDataG=4 natural join cards natural join color;

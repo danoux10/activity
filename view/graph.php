@@ -36,106 +36,78 @@
 			$duration = date("H:i",$end-$start);
 			$dura = date("Hi",$end-$start);
 		}
-		echo $jourA.'<br>'.$S.'<br>'.$E.'<br>'.$duration.'<br>'.$activityChoose.'<br>'.$info.'<br>'.$dayTime;
 		$req = $bdd ->prepare('insert into data_graph set jours=?, debut=?,fin=?,duration=?,durationNum=?,card=?,info=?,ajout=?');
 		$req -> execute([$jourA,$S,$E,$duration,$dura,$activityChoose,$info,$dayTime]);
 	}
 
 	//LINK selection view
 	if(isset($view)) {
+		//set variable name
 		$firstDate = $_POST['dateStart'];
 		$lastDate = $_POST['dateEnd'];
 		$actv = $_POST['activityView'];
 		$hours = $_POST['hoursStartV'];
 		$duration = $_POST['durationV'];
-		
-		//ANCHOR error mesage hours/duration
-		if (!empty($hours) && !empty($duration)) {
-			echo 'error hours and duration ne peuvent pas être entré en même temps';
+		//select first date to see data
+		if (!empty($firstDate)){
+			$StartDate = $_POST['dateStart'];
+			$_SESSION['dayStart']=$StartDate;
+		}else{
+			$StartDate = $today;
+			$_SESSION['dayStart']=$StartDate;
 		}
-		
-		//ANCHOR selection start && empty end
-		if (!empty($firstDate) && empty($lastDate)) {
-			$lastDate = $today;
-			$_SESSION['dayStart'] = $firstDate;
-			$_SESSION['dayEnd']= $lastDate;
-			//select activity
-			if ($actv == 0){
-				//set hours
+		//select second date to see data
+		if(!empty($lastDate)){
+			$EndDate = $_POST['dateEnd'];
+			$_SESSION['dayEnd']=$EndDate;
+		}else{
+			$EndDate = $today;
+			$_SESSION['dayEnd']=$EndDate;
+		}
+		//verification endDate>=startDate
+		if ($StartDate<=$EndDate){
+			//selec activity
+			if($actv == 0){
+				$_SESSION['reqData']=1;
+				$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours between '$StartDate' AND '$EndDate'");
 				if (!empty($hours)){
-					$_SESSION['hours'] = $hours;
+					$_SESSION['reqData']=2;
+					$_SESSION['hours']=$hours;
 					unset($_SESSION['duration']);
-					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours'");
-					
+					$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours between '$StartDate' AND '$EndDate' AND debut ='$hours'");
 				}
-				//set duration
-				if (!empty($duration)){
-					$_SESSION['duration']= $duration;
+				if (!empty($hours)){
+					$_SESSION['reqData']=3;
+					$_SESSION['duration']=$duration;
 					unset($_SESSION['hours']);
-					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration'");
-
+					$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours between '$StartDate' AND '$EndDate' AND duration='$duration' natural join cards natural join color");
 				}
 			}else{
-				//set hours
+				$_SESSION['reqData']=4;
+				$_SESSION['activityS']=$actv;
+				$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours between '$StartDate' AND '$EndDate' AND card='$actv' natural join cards natural join color");
 				if (!empty($hours)){
-					$_SESSION['hours']= $hours;
+					$_SESSION['reqData']=5;
+					$_SESSION['hours']=$hours;
 					unset($_SESSION['duration']);
-					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours' AND card='$actv'");
-
+					$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours between '$StartDate' AND '$EndDate' AND debut='$hours' AND card='$actv' natural join cards natural join color");
 				}
-				//set duration
-				if (!empty($duration)){
-					$_SESSION['duration']= $duration;
+				if (!empty($hours)){
+					$_SESSION['reqData']=6;
+					$_SESSION['duration']=$duration;
 					unset($_SESSION['hours']);
-					$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration' AND card='$actv'");
-
+					$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours between '$StartDate' AND '$EndDate' AND duration='$duration' AND card='$actv' natural join cards natural join color");
 				}
 			}
+		}else{
+			$_SESSION['errorMessage'] = 0;
 		}
-		//ANCHOR else selection
-		else {
-			//verify start >= end
-			if($lastDate >= $firstDate){
-				$_SESSION['dayStart'] = $firstDate;
-				$_SESSION['dayEnd'] = $lastDate;
-				if ($actv == 0){
-					//set hours
-					echo $actv.'<br>';
-					if (!empty($hours)){
-						$_SESSION['hours']= $hours;
-						unset($_SESSION['duration']);
-						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours'");
-
-					}
-					//set duration
-					if (!empty($duration)){
-						$_SESSION['duration']= $duration;
-						unset($_SESSION['hours']);
-						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration'");
-	
-					}
-				}else{
-					//set hours
-					if (!empty($hours)){
-						$_SESSION['hours']= $hours;
-						unset($_SESSION['duration']);
-						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND debut = '$hours' AND card='$actv'");
-
-					}
-					//set duration
-					if (!empty($duration)){
-						$_SESSION['duration']= $duration;
-						unset($_SESSION['hours']);
-						$reqView = $bdd->query("select * from data_graph where jours between '$firstDate' AND '$lastDate' AND duration = '$duration' AND card='$actv'");
-	
-					}
-				}
-			}
-			else{
-				echo 'la dateFin >= de dateDebut';
-			}
-		}
+	}else{
+		$_SESSION['reqData'] = 0;
+//		$reqData = $bdd->query("select * from data_graph natural join cards natural join color where jours='$today'");
+		$reqData = $bdd->query("select * from data_graph inner join cards on cards.idCard=data_graph.card  inner join color on color.idColor=cards.colorId where jours='$today'");
 	}
+	
 	if(isset($table)){
 
 	}
